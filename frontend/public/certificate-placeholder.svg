@@ -1,0 +1,15 @@
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1000" fill="#F8FAFC"/>
+  <rect x="42" y="42" width="1316" height="916" rx="18" fill="white" stroke="#6366F1" stroke-width="8"/>
+  <rect x="70" y="70" width="1260" height="860" rx="10" stroke="#C7D2FE" stroke-width="3"/>
+  <circle cx="700" cy="240" r="82" fill="#EEF2FF"/>
+  <path d="M700 180L716 220L760 224L726 252L737 296L700 272L663 296L674 252L640 224L684 220L700 180Z" fill="#6366F1"/>
+  <text x="700" y="395" text-anchor="middle" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Certificate of Completion</text>
+  <text x="700" y="465" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="28">This is a placeholder certificate</text>
+  <text x="700" y="510" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="28">Replace this file with your credential image or PDF.</text>
+  <path d="M335 650H1065" stroke="#E2E8F0" stroke-width="3"/>
+  <text x="700" y="715" text-anchor="middle" fill="#6366F1" font-family="Arial, sans-serif" font-size="34" font-weight="700">Aishwarya Selvaraju</text>
+  <text x="700" y="775" text-anchor="middle" fill="#94A3B8" font-family="Arial, sans-serif" font-size="22">Issued by Portfolio Placeholder</text>
+  <circle cx="1170" cy="765" r="52" fill="#FDF2F8" stroke="#EC4899" stroke-width="5"/>
+  <path d="M1170 732L1180 756L1206 758L1186 775L1192 801L1170 787L1148 801L1154 775L1134 758L1160 756L1170 732Z" fill="#EC4899"/>
+</svg>

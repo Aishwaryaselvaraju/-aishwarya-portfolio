@@ -19,7 +19,7 @@ export const personalInfo = {
   lastName: "Selvaraju",
   fullName: "Aishwarya Selvaraju",
   initials: "AS",
-  title: "UI/UX Designer | UX Research Enthusiast | Figma Designer",
+  title: "UI/UX Designer & Data Analyst",
   email: "aishwaryaselvaraju14@gmail.com",
   phone: "+91 8015712990",
   location: "Pudukkottai, Tamilnadu",
@@ -29,17 +29,17 @@ export const personalInfo = {
   behance: "https://www.behance.net/aishwaryaselvaraju",
   dribbble: "https://dribbble.com/aishwaryaselvaraju",
   resumePath: "/AishwaryaSelvaraju_Resume.pdf",
-  tagline: "Crafting intuitive, human-centered digital experiences through design thinking and research.",
+  tagline: "Designing intuitive digital experiences and turning data into clear, actionable stories.",
   bio: [
-    "UI/UX **Designer** passionate about crafting intuitive and accessible digital experiences. Proficient in **Figma**, wireframing, prototyping, and mobile UI design with a strong foundation in design thinking and user research.",
-    "Currently pursuing **B.Tech in Information Technology** at Anna University (BIT Campus, Trichy) with a CGPA of **8.2**. Combining technical knowledge with design expertise to build solutions that are both functional and delightful.",
-    "Seeking opportunities to apply **design thinking**, collaborate with cross-functional teams, and grow as a UX professional while delivering meaningful impact through human-centered design.",
+    "I am a **UI/UX Designer and Data Analyst** who pairs human-centered design with evidence-led problem solving. I create accessible digital experiences in **Figma** and turn complex datasets into clear, useful insights.",
+    "Currently pursuing **B.Tech in Information Technology** at Anna University (BIT Campus, Trichy) with a CGPA of **8.2**. My technical foundation helps me move comfortably between research, interface design, data cleaning, and visualization.",
+    "I am seeking opportunities to apply **design thinking and data analysis**, collaborate with cross-functional teams, and deliver products that are both delightful to use and measurable in impact.",
   ],
   stats: [
     { value: "12+", label: "Design Projects" },
     { value: "5+", label: "Design Tools" },
     { value: "8.2", label: "CGPA" },
-    { value: "4", label: "Internships" },
+    { value: "8+", label: "Data Projects" },
   ],
   socialLinks: [
     { icon: RiLinkedinFill, url: "https://www.linkedin.com/in/aishwarya1413", label: "LinkedIn" },
@@ -178,6 +178,7 @@ export const internships = [
 export const projects = [
   {
     title: "Women Safety App — Mobile UI",
+    role: "design",
     description:
       "End-to-end mobile interface design for a women's safety application featuring emergency response, location tracking, and trusted contact management with a calming, accessible design system.",
     tags: ["Mobile App", "Figma", "Prototyping", "UI Design"],
@@ -191,10 +192,17 @@ export const projects = [
       "Large touch targets and voice-command support for accessibility",
       "Onboarding flow with clear user guidance and privacy controls",
     ],
+    caseStudy: {
+      problem: "People need a safety tool that can be used quickly in stressful moments without sacrificing privacy or clarity.",
+      process: "Mapped the emergency journey, prioritised one-hand actions, and tested the hierarchy of the SOS, location, and trusted-contact flows.",
+      solution: "A calm, accessible mobile interface that makes emergency actions, location sharing, and contact management immediately available.",
+      outcome: "A focused four-screen concept that reduces decision-making at the moment a user needs help most.",
+    },
     links: { figma: "#", github: "#" },
   },
   {
     title: "E-Commerce Mobile App — UX Redesign",
+    role: "design",
     description:
       "Full UX redesign of a fashion e-commerce app focusing on checkout flow optimization, product discovery, and seamless browsing experience across mobile devices.",
     tags: ["Mobile App", "UX Research", "Figma", "Design System"],
@@ -208,10 +216,17 @@ export const projects = [
       "User-tested navigation with card sorting and A/B tested CTAs",
       "Dark mode support with automatic theme detection",
     ],
+    caseStudy: {
+      problem: "Fashion shoppers were losing momentum between product discovery and checkout on mobile.",
+      process: "Reviewed the existing journey, used card sorting to validate navigation, and iterated checkout CTAs through usability testing.",
+      solution: "A simplified browsing and three-step checkout experience supported by a reusable mobile design system.",
+      outcome: "The concept targets a 40% improvement in checkout completion by removing unnecessary steps and clarifying next actions.",
+    },
     links: { figma: "#", dribbble: "#" },
   },
   {
     title: "Sales Analytics Dashboard — Data Viz",
+    role: "analytics",
     description:
       "Designed a comprehensive analytics dashboard for business intelligence, transforming complex sales data into intuitive visualizations with drill-down capabilities and real-time filtering.",
     tags: ["Dashboard", "Data Viz", "UX Design", "Prototyping"],
@@ -225,10 +240,17 @@ export const projects = [
       "Responsive grid adapting from mobile to 4K desktop displays",
       "Export-ready dashboard views for stakeholder presentations",
     ],
+    caseStudy: {
+      problem: "Business stakeholders needed to understand sales performance without manually combining reports from multiple levels of detail.",
+      process: "Identified decision-critical KPIs, structured the dashboard from overview to transaction detail, and designed visual hierarchy for fast scanning.",
+      solution: "An interactive dashboard with filters, drill-down views, KPI trends, and export-ready summaries.",
+      outcome: "A 12-widget concept that makes complex sales patterns easier to explore and communicate in stakeholder reviews.",
+    },
     links: { figma: "#", behance: "#" },
   },
   {
     title: "Food Delivery App — UX Case Study",
+    role: "design",
     description:
       "Complete UX case study for a food delivery platform including user interviews, competitive analysis, wireframes, and high-fidelity prototypes with a focus on reducing order friction.",
     tags: ["UX Research", "Mobile App", "Figma", "Case Study"],
@@ -242,10 +264,17 @@ export const projects = [
       "Real-time order tracking with live map integration",
       "Comprehensive 30-page UX case study documenting the full design process",
     ],
+    caseStudy: {
+      problem: "Returning customers faced too much friction when placing familiar food orders.",
+      process: "Interviewed 25+ users, synthesised personas, mapped the ordering journey, and completed three rounds of prototype testing.",
+      solution: "A streamlined food discovery and reorder experience with live order tracking and clearer decision points.",
+      outcome: "The redesigned reorder flow cuts the journey from six taps to two for returning customers.",
+    },
     links: { figma: "#", behance: "#" },
   },
   {
     title: "Poster & Social Media Design System",
+    role: "design",
     description:
       "Developed a cohesive visual identity and design system for social media campaigns including posters, infographics, and promotional materials applying typography and color theory.",
     tags: ["Graphic Design", "Branding", "Canva", "Typography"],
@@ -259,10 +288,17 @@ export const projects = [
       "Consistent color palette and typography system across all platforms",
       "Template library reducing new design turnaround by 60%",
     ],
+    caseStudy: {
+      problem: "Campaign teams needed to publish frequent social content without losing visual consistency.",
+      process: "Defined reusable layout rules, typography, colour tokens, and content patterns around common campaign formats.",
+      solution: "A flexible template library for posts, posters, infographics, and promotional assets.",
+      outcome: "The system supports consistent visual communication while reducing new-design turnaround by 60%.",
+    },
     links: { behance: "#", dribbble: "#" },
   },
   {
     title: "Fitness Tracker App — Mobile UI",
+    role: "design",
     description:
       "Designed a holistic fitness companion app with workout tracking, nutrition logging, progress visualization, and social accountability features in a clean, motivating interface.",
     tags: ["Mobile App", "Figma", "Prototyping", "UI Design"],
@@ -276,6 +312,12 @@ export const projects = [
       "Animated exercise demonstrations with pose reference overlays",
       "Social feed for sharing workouts and motivating friends",
     ],
+    caseStudy: {
+      problem: "Fitness tracking can feel fragmented and unmotivating when workouts, progress, and social accountability live in separate places.",
+      process: "Organised core user tasks into a progressive mobile flow and explored motivation patterns through streaks, milestones, and simple visual feedback.",
+      solution: "A unified fitness companion that combines planning, activity logging, progress analytics, and community motivation.",
+      outcome: "A cohesive 15-screen prototype that gives users one clear home for their fitness routine.",
+    },
     links: { figma: "#", dribbble: "#" },
   },
 ];
@@ -291,6 +333,7 @@ export const certifications = [
     icon: "🤖",
     color: "#6366f1",
     description: "Practical understanding of generative AI tools and their application in design workflows and creative problem-solving.",
+    file: "/certificate-placeholder.svg",
   },
   {
     title: "Data Science Essentials",
@@ -298,6 +341,7 @@ export const certifications = [
     icon: "📊",
     color: "#f59e0b",
     description: "Foundational knowledge in data science methodologies, statistical analysis, and data-driven decision making for product design.",
+    file: "/certificate-placeholder.svg",
   },
   {
     title: "Data Visualisation",
@@ -305,6 +349,31 @@ export const certifications = [
     icon: "📈",
     color: "#10b981",
     description: "Skills in visualizing complex datasets, creating meaningful dashboards, and communicating design insights through data.",
+    file: "/certificate-placeholder.svg",
+  },
+  {
+    title: "Google UX Design Foundations",
+    issuer: "Google Career Certificates",
+    icon: "🎨",
+    color: "#ec4899",
+    description: "Foundations in user-centred design, empathy mapping, wireframing, and usability testing.",
+    file: "/certificate-placeholder.svg",
+  },
+  {
+    title: "Python for Data Analysis",
+    issuer: "Online Learning Certificate",
+    icon: "🐍",
+    color: "#8b5cf6",
+    description: "Applied Python skills for data cleaning, exploratory analysis, and communicating findings.",
+    file: "/certificate-placeholder.svg",
+  },
+  {
+    title: "Fundamentals of Data Visualisation",
+    issuer: "Professional Development Certificate",
+    icon: "📊",
+    color: "#14b8a6",
+    description: "Principles for selecting effective charts and building clear, decision-ready visual stories.",
+    file: "/certificate-placeholder.svg",
   },
 ];
 

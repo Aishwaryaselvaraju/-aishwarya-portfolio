@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="text-center md:text-left flex-1 order-2 md:order-1">
             <div className="stagger-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-semibold tracking-wider uppercase mb-5">
               <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
-              UI/UX Designer
+              UI/UX Designer & Data Analyst
             </div>
 
             <h1 className="stagger-item text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] mb-4">
@@ -96,7 +96,10 @@ export default function Hero() {
                 UX Research
               </span>
               <span className="px-3.5 py-1.5 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] text-xs font-semibold border border-[var(--border-color)]">
-                Mobile UI
+                Data Analytics
+              </span>
+              <span className="px-3.5 py-1.5 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] text-xs font-semibold border border-[var(--border-color)]">
+                Data Visualisation
               </span>
               <span className="px-3.5 py-1.5 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] text-xs font-semibold border border-[var(--border-color)]">
                 {personalInfo.location.split(",")[0]}
