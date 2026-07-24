@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { certifications } from "../data/portfolioData";
-import { RiCloseLine, RiExpandDiagonalLine, RiVerifiedBadgeFill } from "react-icons/ri";
+import { RiExpandDiagonalLine, RiVerifiedBadgeFill } from "react-icons/ri";
 
 export default function Certifications() {
   const ref = useRef(null);
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -18,12 +17,6 @@ export default function Certifications() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const closeOnEscape = (event) => event.key === "Escape" && setSelectedCertificate(null);
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
-
   if (certifications.length === 0) return null;
 
   return (
@@ -32,7 +25,7 @@ export default function Certifications() {
         <div className="section-header stagger-item">
           <span className="section-label">Credentials</span>
           <h2 className="section-title">Certifications</h2>
-          <p className="section-subtitle">Select a credential to preview the certificate.</p>
+          <p className="section-subtitle">Click a credential to open the certificate.</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -40,15 +33,15 @@ export default function Certifications() {
             <button
               key={cert.title}
               type="button"
-              onClick={() => setSelectedCertificate(cert)}
-              className="stagger-item card p-6 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg-primary)]"
-              aria-label={`Preview ${cert.title} certificate`}
+              onClick={() => window.open(cert.file, "_blank", "noopener,noreferrer")}
+              className="group stagger-item card p-4 sm:p-6 text-left cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(0,0,0,0.16)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg-primary)]"
+              aria-label={`Open ${cert.title} certificate`}
             >
               <div className="flex justify-between gap-3">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-4" style={{ backgroundColor: `${cert.color}18` }}>
                   {cert.icon}
                 </div>
-                <RiExpandDiagonalLine className="text-[var(--text-muted)]" size={17} />
+                <RiExpandDiagonalLine className="text-[var(--text-muted)] transition group-hover:text-[var(--primary)]" size={17} />
               </div>
               <div className="flex items-center gap-1.5 mb-2">
                 <RiVerifiedBadgeFill size={14} style={{ color: cert.color }} />
@@ -62,17 +55,6 @@ export default function Certifications() {
         </div>
       </div>
 
-      {selectedCertificate && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={`${selectedCertificate.title} certificate preview`} onMouseDown={() => setSelectedCertificate(null)}>
-          <div className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-auto bg-[var(--bg-card)] shadow-2xl" onMouseDown={(event) => event.stopPropagation()}>
-            <div className="sticky top-0 flex items-center justify-between gap-4 p-4 bg-[var(--bg-card)] border-b border-[var(--border-color)] z-10">
-              <div><h3 className="font-bold text-[var(--text-primary)]">{selectedCertificate.title}</h3><p className="text-xs text-[var(--text-tertiary)]">{selectedCertificate.issuer}</p></div>
-              <button type="button" onClick={() => setSelectedCertificate(null)} className="p-2 rounded-xl text-[var(--text-tertiary)] hover:bg-[var(--bg-tertiary)]" aria-label="Close certificate preview"><RiCloseLine size={22} /></button>
-            </div>
-            <img src={selectedCertificate.file} alt={`Placeholder for ${selectedCertificate.title} certificate`} className="w-full h-auto bg-white" />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

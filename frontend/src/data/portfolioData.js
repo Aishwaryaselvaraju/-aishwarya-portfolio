@@ -9,6 +9,10 @@ import {
   RiBehanceFill,
   RiDribbbleFill,
 } from "react-icons/ri";
+import genAiCertificate from "../certificate/Gen AI.png";
+import uxDesignCertificate from "../certificate/UX Design.png";
+import relianceFoundationCertificate from "../certificate/Reliancefoundation.png";
+import dataVisualizationCertificate from "../certificate/Data Visualization.png";
 
 /* ------------------------------------------------------------------ */
 /*  ALL PORTFOLIO DATA — single source of truth extracted from resume */
@@ -56,18 +60,17 @@ export const personalInfo = {
 export const skillCategories = [
   {
     title: "Design Tools",
-    icon: "🎨",
     skills: [
       { name: "Figma", level: 95 },
       { name: "Adobe Photoshop", level: 78 },
       { name: "CorelDRAW", level: 80 },
       { name: "Canva", level: 90 },
       { name: "Inkscape", level: 70 },
+      { name: "Balsamiq", level: 65 },
     ],
   },
   {
     title: "UI/UX Skills",
-    icon: "🖌️",
     skills: [
       { name: "Wireframing & Prototyping", level: 92 },
       { name: "Mobile UI Design", level: 88 },
@@ -75,21 +78,32 @@ export const skillCategories = [
       { name: "Information Architecture", level: 75 },
       { name: "Visual Design", level: 85 },
       { name: "Design Systems", level: 72 },
+      { name: "Graphic Design", level: 72 },
+      { name: "Logo Design", level: 72 },
+    ],
+  },
+    {
+    title: "Data Analysis",
+    skills: [
+      { name: "Python", level: 80 },
+      { name: "Data Visualization", level: 85 },
+      { name: "Excel", level: 80 },
+      { name: "POWER BI", level: 75 },
+      { name: "SQL", level: 70 },
+      { name: "DAX", level: 65 },  
     ],
   },
   {
     title: "Web & Tech",
-    icon: "💻",
     skills: [
       { name: "Responsive Web Design", level: 80 },
       { name: "HTML5 / CSS3", level: 75 },
       { name: "JavaScript Basics", level: 60 },
-      { name: "Data Analysis", level: 65 },
+      { name: "Bootstrap", level: 65 },
     ],
   },
   {
     title: "Soft Skills",
-    icon: "🌟",
     skills: [
       { name: "Design Thinking", level: 90 },
       { name: "Collaboration", level: 88 },
@@ -333,7 +347,7 @@ export const certifications = [
     icon: "🤖",
     color: "#6366f1",
     description: "Practical understanding of generative AI tools and their application in design workflows and creative problem-solving.",
-    file: "/certificate-placeholder.svg",
+    file: genAiCertificate,
   },
   {
     title: "Data Science Essentials",
@@ -341,7 +355,7 @@ export const certifications = [
     icon: "📊",
     color: "#f59e0b",
     description: "Foundational knowledge in data science methodologies, statistical analysis, and data-driven decision making for product design.",
-    file: "/certificate-placeholder.svg",
+    file: relianceFoundationCertificate,
   },
   {
     title: "Data Visualisation",
@@ -349,7 +363,7 @@ export const certifications = [
     icon: "📈",
     color: "#10b981",
     description: "Skills in visualizing complex datasets, creating meaningful dashboards, and communicating design insights through data.",
-    file: "/certificate-placeholder.svg",
+    file: dataVisualizationCertificate,
   },
   {
     title: "Google UX Design Foundations",
@@ -357,7 +371,7 @@ export const certifications = [
     icon: "🎨",
     color: "#ec4899",
     description: "Foundations in user-centred design, empathy mapping, wireframing, and usability testing.",
-    file: "/certificate-placeholder.svg",
+    file: uxDesignCertificate,
   },
   {
     title: "Python for Data Analysis",
