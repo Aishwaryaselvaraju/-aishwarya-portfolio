@@ -9,6 +9,23 @@ import dataVisualizationCertificate from "../certificate/Data Visualization.png"
 import pythonCertificate from "../certificate/python.png";
 import dataAnalysisCertificate from "../certificate/DA.png";
 
+//adding images for projects
+
+import ecomImage from "../image/Ecom.png";
+import electionImage from "../image/Election.jpeg";
+import herSafeImage from "../image/hersafe.png";
+import cartoImage from "../image/carto.png";
+import foodImage from "../image/food.png";
+import fitnessImage from "../image/fitness.png";
+import posterImage from "../image/poster.png";
+import instagramDashboardImage from "../image/Instagram Dashboard.jpeg";
+import hrImage from "../image/HR.jpeg";
+import financialImage from "../image/fin.jpeg";
+import spendingImage from "../image/spend.jpeg";
+import salesProfitImage from "../image/s&p.jpeg";
+import salesImage from "../image/sales.jpeg";
+import globalSalesImage from "../image/global.jpeg";
+
 
 
 /* ------------------------------------------------------------------ */
@@ -209,7 +226,7 @@ export const projects = [
     summary: "A Power BI dashboard for tracking online sales, orders, customers, products, and revenue trends.",
     description: "Developed a Power BI dashboard to analyze e-commerce sales performance and customer ordering patterns.",
     tags: ["Power BI", "E-Commerce", "Sales Analytics", "Dashboard"],
-    image: "src\\image\\Ecom.png",
+    image: ecomImage,
     imageFit: "contain",
     impact: "4",
     impactLabel: "Sales Views",
@@ -228,7 +245,7 @@ export const projects = [
     summary: "A Power BI dashboard for exploring Indian election results, parties, states, seats, and voting patterns.",
     description: "Created a Power BI dashboard to present Indian election results through state, party, seat, and vote analysis.",
     tags: ["Power BI", "Political Analytics", "Data Visualization", "Dashboard"],
-    image: "src\\image\\Election.jpeg",
+    image: electionImage,
     imageFit: "contain",
     impact: "543",
     impactLabel: "Seats Analyzed",
@@ -249,7 +266,7 @@ export const projects = [
     description:
       "Designed a mobile safety app focused on emergency SOS, trusted contacts, and location sharing.",
     tags: ["Figma", "UI/UX", "Mobile App"],
-    image: "src\\image\\hersafe.png",
+    image: herSafeImage,
     impact: "Mobile",
     impactLabel: "UI Design",
     features: [
@@ -275,7 +292,7 @@ export const projects = [
     description:
       "Designed a mobile e-commerce interface with clear product discovery, browsing, and checkout experiences.",
     tags: ["Figma", "UI/UX", "Mobile App"],
-    image: "src\\image\\carto.png",
+    image: cartoImage,
     impact: "40%",
     impactLabel: "Checkout Improvement",
     features: [
@@ -303,7 +320,7 @@ export const projects = [
     description:
       "Designed a food delivery app interface with a focus on restaurant discovery, ordering, and live delivery tracking.",
     tags: ["Figma", "UI/UX", "Mobile App"],
-    image: "src\\image\\food.png",
+    image: foodImage,
     impact: "25+",
     impactLabel: "User Interviews",
     features: [
@@ -332,7 +349,7 @@ export const projects = [
     description:
       "Designed a fitness app interface for workout planning, activity tracking, progress visualization, and motivation.",
     tags: ["Figma", "UI/UX", "Mobile App"],
-    image: "src\\image\\fitness.png",
+    image: fitnessImage,
     impact: "15",
     impactLabel: "Screens Designed",
     features: [
@@ -361,7 +378,7 @@ export const projects = [
     description:
       "Created posters, social media designs, and video edits for digital campaigns using Canva.",
     tags: ["Canva", "Graphic Design", "Video Editing"],
-    image: "src\\image\\poster.png",
+    image: posterImage,
     impact: "20+",
     impactLabel: "Design Templates",
     features: [
@@ -396,7 +413,7 @@ export const projects = [
     summary: "An Excel dashboard for comparing Instagram engagement, likes, and category-wise performance.",
     description: "Created an Excel dashboard to analyze Instagram engagement, likes, and category-wise content performance.",
     tags: ["Excel", "Data Analytics", "PivotTable", "PivotChart"],
-    image: "/images/Instagram Dashboard.jpeg",
+    image: instagramDashboardImage,
     imageFit: "contain",
     impact: "2000",
     impactLabel: "Records Analyzed",
@@ -423,7 +440,7 @@ export const projects = [
     summary: "A Power BI dashboard for analyzing employee attrition, workforce trends, and department performance.",
     description: "Created a Power BI HR analytics dashboard to explore employee attrition and workforce patterns through interactive visuals.",
     tags: ["Power BI", "HR Analytics", "DAX", "Dashboard"],
-    image: "src\\image\\HR.jpeg",
+    image: hrImage,
     imageFit: "contain",
     impact: "1,470",
     impactLabel: "Employee Records",
@@ -442,7 +459,7 @@ export const projects = [
     summary: "A Power BI dashboard for tracking revenue, expenses, profit, and financial performance trends.",
     description: "Built a Power BI financial analytics dashboard to compare revenue, costs, profit, and monthly business performance.",
     tags: ["Power BI", "Financial Analytics", "DAX", "Dashboard"],
-    image: "src\\image\\Fin.jpeg",
+    image: financialImage,
     imageFit: "contain",
     impact: "12",
     impactLabel: "Financial KPIs",
@@ -463,7 +480,7 @@ export const projects = [
     summary: "A Power BI dashboard for understanding personal spending, shopping categories, and purchase patterns.",
     description: "Built a Power BI dashboard to analyze personal spending habits, shopping categories, and changes in expenses.",
     tags: ["Power BI", "Personal Finance", "Data Analytics", "Dashboard"],
-    image: "src\\image\\spend.jpeg",
+    image: spendingImage,
     imageFit: "contain",
     impact: "12",
     impactLabel: "Spending Insights",
@@ -482,7 +499,7 @@ export const projects = [
     summary: "A Power BI dashboard for comparing sales, profit, products, regions, and business performance trends.",
     description: "Designed a Power BI dashboard to analyze sales and profit performance across products, regions, and time periods.",
     tags: ["Power BI", "Sales Analytics", "DAX", "Dashboard"],
-    image: "src\\image\\s&p.jpeg",
+    image: salesProfitImage,
     imageFit: "contain",
     impact: "5",
     impactLabel: "Performance Views",
@@ -501,7 +518,7 @@ export const projects = [
     summary: "An Excel dashboard for tracking sales performance, product results, regions, and revenue trends.",
     description: "Created an Excel sales dashboard to summarize revenue, orders, products, and regional performance.",
     tags: ["Excel", "Data Analytics", "PivotTable", "Dashboard"],
-    image: "src\\image\\sales.jpeg",
+    image: salesImage,
     imageFit: "contain",
     impact: "4",
     impactLabel: "Sales Views",
@@ -520,7 +537,7 @@ export const projects = [
     summary: "A Tableau dashboard for exploring global sales, profit, regional performance, and product trends.",
     description: "Designed a Tableau dashboard to compare global sales and profit across regions, categories, and products.",
     tags: ["Tableau", "Data Visualization", "Sales Analytics", "Dashboard"],
-    image: "src\\image\\global.jpeg",
+    image: globalSalesImage,
     imageFit: "contain",
     impact: "4",
     impactLabel: "Global Regions",
