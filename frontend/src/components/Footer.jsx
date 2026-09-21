@@ -1,5 +1,5 @@
 import { personalInfo } from "../data/portfolioData";
-import { RiLinkedinFill, RiGithubFill, RiBehanceFill, RiDribbbleFill, RiArrowUpLine } from "react-icons/ri";
+import { RiLinkedinFill, RiGithubFill, RiArrowUpLine } from "react-icons/ri";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -9,8 +9,6 @@ export default function Footer() {
   const socialIcons = [
     { icon: RiLinkedinFill, url: personalInfo.linkedin, label: "LinkedIn" },
     { icon: RiGithubFill, url: personalInfo.github, label: "GitHub" },
-    { icon: RiBehanceFill, url: personalInfo.behance, label: "Behance" },
-    { icon: RiDribbbleFill, url: personalInfo.dribbble, label: "Dribbble" },
   ].filter(s => s.url);
 
   return (

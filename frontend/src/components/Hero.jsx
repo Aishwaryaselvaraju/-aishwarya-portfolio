@@ -1,14 +1,6 @@
 import { useEffect, useRef } from "react";
-import { RiDownloadFill, RiArrowRightSLine, RiLinkedinFill, RiGithubFill, RiMailFill, RiBehanceFill, RiDribbbleFill } from "react-icons/ri";
+import { RiDownloadFill, RiArrowRightSLine } from "react-icons/ri";
 import { personalInfo } from "../data/portfolioData";
-
-const iconMap = {
-  RiLinkedinFill: RiLinkedinFill,
-  RiGithubFill: RiGithubFill,
-  RiBehanceFill: RiBehanceFill,
-  RiDribbbleFill: RiDribbbleFill,
-  RiMailFill: RiMailFill,
-};
 
 export default function Hero() {
   const ref = useRef(null);
@@ -100,9 +92,6 @@ export default function Hero() {
               </span>
               <span className="px-3.5 py-1.5 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] text-xs font-semibold border border-[var(--border-color)]">
                 Data Visualisation
-              </span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] text-xs font-semibold border border-[var(--border-color)]">
-                {personalInfo.location.split(",")[0]}
               </span>
             </div>
 

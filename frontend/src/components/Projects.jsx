@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { projects } from "../data/portfolioData";
-import { RiArrowRightLine, RiCloseLine, RiExternalLinkLine, RiFigmaLine, RiGithubLine } from "react-icons/ri";
+import { personalInfo, projects } from "../data/portfolioData";
+import { RiArrowRightLine, RiCloseLine, RiExternalLinkLine, RiFigmaLine, RiGithubLine, RiLinkedinFill } from "react-icons/ri";
+import { SiCanva } from "react-icons/si";
 
 const tagStyles = {
   "Mobile App": "bg-[var(--primary-subtle)] text-[var(--primary)]", Figma: "bg-[var(--accent-subtle)] text-[var(--accent)]",
@@ -10,7 +11,10 @@ const tagStyles = {
 };
 
 const filters = [{ id: "all", label: "All projects" }, { id: "design", label: "UI/UX Design" }, { id: "analytics", label: "Data Analytics" }];
-const externalLinks = (project) => Object.entries(project.links || {}).filter(([, url]) => url && url !== "#");
+const externalLinks = (project) => Object.entries(project.links || {}).flatMap(([type, urls]) => {
+  const linkList = Array.isArray(urls) ? urls : [urls];
+  return linkList.filter((url) => url && url !== "#").map((url, index) => [type, url, index]);
+});
 
 export default function Projects() {
   const ref = useRef(null);
@@ -43,18 +47,18 @@ export default function Projects() {
         <div className="stagger-item flex flex-wrap justify-center gap-2 mb-8" role="tablist" aria-label="Filter projects by discipline">
           {filters.map((filter) => <button key={filter.id} type="button" role="tab" aria-selected={activeFilter === filter.id} onClick={() => setActiveFilter(filter.id)} className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${activeFilter === filter.id ? "bg-[var(--primary)] text-white" : "bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] hover:text-[var(--primary)]"}`}>{filter.label}</button>)}
         </div>
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {visibleProjects.map((project) => (
             <article key={project.title} className="group card overflow-hidden">
               <button type="button" onClick={() => setSelectedProject(project)} className="block w-full text-left focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--primary)]">
-                <div className="relative overflow-hidden aspect-[16/10]"><img src={project.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className={`relative overflow-hidden aspect-[16/10] ${project.imageFit === "contain" ? "bg-[var(--bg-tertiary)]" : ""}`}><img src={project.image} alt={project.title} className={`w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-700`} />
                   <div className="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-white/90 dark:bg-[var(--bg-card)]/90 text-xs font-bold text-[var(--primary)]">{project.impact} <span className="font-medium text-[var(--text-tertiary)]">{project.impactLabel}</span></div>
                 </div>
                 <div className="p-5 sm:p-6"><div className="flex flex-wrap gap-1.5 mb-3">{project.tags.map((tag) => <span key={tag} className={`px-2.5 py-0.5 text-[10px] font-semibold rounded-lg ${tagStyles[tag] || "bg-[var(--bg-tertiary)] text-[var(--text-tertiary)]"}`}>{tag}</span>)}</div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)] mb-2">{project.role === "analytics" ? "Data Analytics" : "UI/UX Design"}</p><h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{project.title}</h3><p className="text-sm text-[var(--text-secondary)] leading-relaxed">{project.description}</p>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)] mb-2">{project.role === "analytics" ? "Data Analytics" : "UI/UX Design"}</p><h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{project.title}</h3><p className="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-2">{project.summary}</p>
                 </div>
               </button>
-              <div className="flex items-center justify-between gap-3 px-5 pb-5 sm:px-6 sm:pb-6"><button type="button" onClick={() => setSelectedProject(project)} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--primary)] hover:underline">View case study <RiArrowRightLine /></button><button type="button" onClick={() => setSelectedProject(project)} className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-tertiary)] hover:text-[var(--primary)]"><RiGithubLine size={15} /> Project links</button></div>
+              <div className="flex items-center justify-between gap-3 px-5 pb-5 sm:px-6 sm:pb-6"><button type="button" onClick={() => setSelectedProject(project)} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--primary)] hover:underline">View case study <RiArrowRightLine /></button><div className="flex items-center gap-2"><a href={personalInfo.github} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} GitHub profile`} title="GitHub"><RiGithubLine size={17} /></a><a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} LinkedIn profile`} title="LinkedIn"><RiLinkedinFill size={17} /></a></div></div>
             </article>
           ))}
         </div>
@@ -69,11 +73,11 @@ function ProjectDetail({ project, onClose }) {
   return <div className="fixed inset-0 z-50 p-4 sm:p-8 overflow-y-auto bg-slate-950/75 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={`${project.title} case study`} onMouseDown={onClose}>
     <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden bg-[var(--bg-card)] shadow-2xl" onMouseDown={(event) => event.stopPropagation()}>
       <button type="button" onClick={onClose} className="absolute z-10 top-4 right-4 p-2 rounded-xl bg-[var(--bg-card)]/90 text-[var(--text-primary)] shadow-md hover:bg-[var(--bg-tertiary)]" aria-label="Close case study"><RiCloseLine size={22} /></button>
-      <img src={project.image} alt="" className="w-full max-h-80 object-cover" />
+      <img src={project.image} alt={project.title} className={`w-full max-h-80 ${project.imageFit === "contain" ? "object-contain bg-[var(--bg-tertiary)]" : "object-cover"}`} />
       <div className="p-6 sm:p-10"><p className="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2">{project.role === "analytics" ? "Data Analytics case study" : "UI/UX Design case study"}</p><h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] mb-3">{project.title}</h2><p className="text-[var(--text-secondary)] leading-relaxed mb-8">{project.description}</p>
         <div className="grid md:grid-cols-2 gap-4 mb-8">{Object.entries(project.caseStudy || {}).map(([heading, copy]) => <div key={heading} className="rounded-xl p-5 bg-[var(--bg-tertiary)]"><h3 className="capitalize text-sm font-bold text-[var(--primary)] mb-2">{heading}</h3><p className="text-sm text-[var(--text-secondary)] leading-relaxed">{copy}</p></div>)}</div>
         <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">Full feature list</h3><ul className="grid sm:grid-cols-2 gap-3 mb-8">{project.features.map((feature) => <li key={feature} className="flex gap-2 text-sm text-[var(--text-secondary)]"><span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0 bg-[var(--primary)]" />{feature}</li>)}</ul>
-        <div className="flex flex-wrap gap-3 pt-6 border-t border-[var(--border-color)]">{links.length ? links.map(([type, url]) => <a key={type} href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--primary-subtle)] text-[var(--primary)] text-sm font-semibold hover:opacity-80">{type === "github" ? <RiGithubLine /> : <RiFigmaLine />}{type} <RiExternalLinkLine size={15} /></a>) : <p className="text-sm text-[var(--text-tertiary)]">Project link coming soon.</p>}</div>
+        <div className="flex flex-wrap gap-3 pt-6 border-t border-[var(--border-color)]">{links.length ? links.map(([type, url, index]) => <a key={`${type}-${index}`} href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--primary-subtle)] text-[var(--primary)] text-sm font-semibold hover:opacity-80">{type === "github" ? <RiGithubLine /> : type === "figma" ? <RiFigmaLine /> : type === "canva" ? <SiCanva /> : <RiExternalLinkLine />}{type}{links.filter(([linkType]) => linkType === type).length > 1 ? ` ${index + 1}` : ""} <RiExternalLinkLine size={15} /></a>) : <p className="text-sm text-[var(--text-tertiary)]">Project link coming soon.</p>}</div>
       </div>
     </div>
   </div>;

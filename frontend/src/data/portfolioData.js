@@ -1,18 +1,15 @@
 import {
   RiLinkedinFill,
-  RiMailFill,
-  RiPhoneFill,
-  RiMapPinFill,
   RiGithubFill,
-  RiGlobalFill,
-  RiStarFill,
-  RiBehanceFill,
-  RiDribbbleFill,
 } from "react-icons/ri";
 import genAiCertificate from "../certificate/Gen AI.png";
 import uxDesignCertificate from "../certificate/UX Design.png";
 import relianceFoundationCertificate from "../certificate/Reliancefoundation.png";
 import dataVisualizationCertificate from "../certificate/Data Visualization.png";
+import pythonCertificate from "../certificate/python.png";
+import dataAnalysisCertificate from "../certificate/DA.png";
+
+
 
 /* ------------------------------------------------------------------ */
 /*  ALL PORTFOLIO DATA — single source of truth extracted from resume */
@@ -30,12 +27,10 @@ export const personalInfo = {
   languages: ["Tamil", "English"],
   linkedin: "https://www.linkedin.com/in/aishwarya1413",
   github: "https://github.com/aishwaryaselvaraju",
-  behance: "https://www.behance.net/aishwaryaselvaraju",
-  dribbble: "https://dribbble.com/aishwaryaselvaraju",
   resumePath: "/AishwaryaSelvaraju_Resume.pdf",
   tagline: "Designing intuitive digital experiences and turning data into clear, actionable stories.",
   bio: [
-    "I am a **UI/UX Designer and Data Analyst** who pairs human-centered design with evidence-led problem solving. I create accessible digital experiences in **Figma** and turn complex datasets into clear, useful insights.",
+    "I am a ** Data Analyst & UI/UX Designer ** who pairs human-centered design with evidence-led problem solving. I create accessible digital experiences in **Figma** and turn complex datasets into clear, useful insights.",
     "Currently pursuing **B.Tech in Information Technology** at Anna University (BIT Campus, Trichy) with a CGPA of **8.2**. My technical foundation helps me move comfortably between research, interface design, data cleaning, and visualization.",
     "I am seeking opportunities to apply **design thinking and data analysis**, collaborate with cross-functional teams, and deliver products that are both delightful to use and measurable in impact.",
   ],
@@ -48,9 +43,7 @@ export const personalInfo = {
   socialLinks: [
     { icon: RiLinkedinFill, url: "https://www.linkedin.com/in/aishwarya1413", label: "LinkedIn" },
     { icon: RiGithubFill, url: "https://github.com/aishwaryaselvaraju", label: "GitHub" },
-    { icon: RiBehanceFill, url: "https://www.behance.net/aishwaryaselvaraju", label: "Behance" },
-    { icon: RiMailFill, url: "mailto:aishwaryaselvaraju14@gmail.com", label: "Email" },
-  ],
+   ],
 };
 
 /* ------------------------------------------------------------------ */
@@ -58,6 +51,20 @@ export const personalInfo = {
 /* ------------------------------------------------------------------ */
 
 export const skillCategories = [
+
+    {
+    title: "Data Analysis",
+    skills: [
+      { name: "Python", level: 80 },
+      { name: "Data Visualization", level: 85 },
+      { name: "Excel", level: 80 },
+      { name: "POWER BI", level: 75 },
+      { name: "SQL", level: 70 },
+      { name: "DAX", level: 65 },
+      { name: "Tableau", level: 50 },
+    ],
+  },
+
   {
     title: "Design Tools",
     skills: [
@@ -82,17 +89,7 @@ export const skillCategories = [
       { name: "Logo Design", level: 72 },
     ],
   },
-    {
-    title: "Data Analysis",
-    skills: [
-      { name: "Python", level: 80 },
-      { name: "Data Visualization", level: 85 },
-      { name: "Excel", level: 80 },
-      { name: "POWER BI", level: 75 },
-      { name: "SQL", level: 70 },
-      { name: "DAX", level: 65 },  
-    ],
-  },
+
   {
     title: "Web & Tech",
     skills: [
@@ -119,12 +116,31 @@ export const skillCategories = [
 /* ------------------------------------------------------------------ */
 
 export const experience = [
+];
+
+export const internships = [
+ 
   {
+    role: "Data Analysis Intern",
+    company: "novi Tech Research & Development",
+    location: "Coimbatore",
+    period: "Jun – july 2026",
+    type: "internship",
+    impact: "5+",
+    impactLabel: "Dashboards Developed",
+    description: [
+      "Developed **5+ responsive dashboards** using Power BI and Excel, enabling stakeholders to visualize key metrics and trends effectively.",
+    ],
+    tags: ["Excel", "PowerBI", "python", "Data Visualization", "SQL"],
+    color: "#0bf517",
+  },
+
+   {
     role: "Software Engineer Intern",
     company: "Ibee Analytics",
     location: "Hyderabad",
     period: "Sep 2025 – Nov 2025",
-    type: "experience",
+    type: "internship",
     impact: "30+",
     impactLabel: "Marketing Creatives",
     description: [
@@ -135,9 +151,6 @@ export const experience = [
     tags: ["Figma", "Canva", "UI Design", "Brand Design"],
     color: "#6366f1",
   },
-];
-
-export const internships = [
   {
     role: "Web Developer Intern",
     company: "Hapus Infotech",
@@ -190,21 +203,60 @@ export const internships = [
 /* ------------------------------------------------------------------ */
 
 export const projects = [
-  {
-    title: "Women Safety App — Mobile UI",
-    role: "design",
-    description:
-      "End-to-end mobile interface design for a women's safety application featuring emergency response, location tracking, and trusted contact management with a calming, accessible design system.",
-    tags: ["Mobile App", "Figma", "Prototyping", "UI Design"],
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80",
+{
+    title: "E-Commerce Sales Dashboard",
+    role: "analytics",
+    summary: "A Power BI dashboard for tracking online sales, orders, customers, products, and revenue trends.",
+    description: "Developed a Power BI dashboard to analyze e-commerce sales performance and customer ordering patterns.",
+    tags: ["Power BI", "E-Commerce", "Sales Analytics", "Dashboard"],
+    image: "src\\image\\Ecom.png",
+    imageFit: "contain",
     impact: "4",
-    impactLabel: "Core Screens",
+    impactLabel: "Sales Views",
+    features: ["Sales and order KPIs", "Customer and product analysis", "Monthly revenue trends", "Category performance breakdown", "Interactive date and region filters"],
+    caseStudy: {
+      problem: "E-commerce teams need one view of orders, revenue, customers, and products to monitor business performance.",
+      process: "Prepared order data and created Power BI visuals and measures for sales, customers, products, and time-based comparisons.",
+      solution: "A sales dashboard that brings core e-commerce metrics into one interactive reporting view.",
+      outcome: "The dashboard supports quick monitoring of sales trends and product performance.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/PowerBi_Ecommerce-sales-Dashboard" },
+  },
+  {
+    title: "Indian Elections Analytics Dashboard",
+    role: "analytics",
+    summary: "A Power BI dashboard for exploring Indian election results, parties, states, seats, and voting patterns.",
+    description: "Created a Power BI dashboard to present Indian election results through state, party, seat, and vote analysis.",
+    tags: ["Power BI", "Political Analytics", "Data Visualization", "Dashboard"],
+    image: "src\\image\\Election.jpeg",
+    imageFit: "contain",
+    impact: "543",
+    impactLabel: "Seats Analyzed",
+    features: ["State-wise result analysis", "Party seat comparisons", "Vote share KPIs", "Interactive state and party filters", "Election trend visualizations"],
+    caseStudy: {
+      problem: "Election results contain many dimensions that are difficult to compare in raw tables.",
+      process: "Structured the election data and designed Power BI views for states, parties, seats, votes, and result comparisons.",
+      solution: "An interactive dashboard that presents election outcomes through clear KPIs and comparative visuals.",
+      outcome: "The dashboard makes election data easier to filter, compare, and understand.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/powerBi_State-wise-Constituency-Analysis" },
+  },
+  
+  {
+    title: "HerSafe — Women Safety App",
+    role: "design",
+    summary: "A mobile safety app focused on emergency SOS, trusted contacts, and location sharing.",
+    description:
+      "Designed a mobile safety app focused on emergency SOS, trusted contacts, and location sharing.",
+    tags: ["Figma", "UI/UX", "Mobile App"],
+    image: "src\\image\\hersafe.png",
+    impact: "Mobile",
+    impactLabel: "UI Design",
     features: [
-      "Emergency SOS trigger with instant alert to trusted contacts and authorities",
-      "Real-time location sharing with geofencing alerts",
-      "Calming lavender-toned color palette designed for emotional safety",
-      "Large touch targets and voice-command support for accessibility",
-      "Onboarding flow with clear user guidance and privacy controls",
+      "Emergency SOS",
+      "Trusted contacts",
+      "Location sharing",
+      "Safety-focused interface",
     ],
     caseStudy: {
       problem: "People need a safety tool that can be used quickly in stressful moments without sacrificing privacy or clarity.",
@@ -212,15 +264,18 @@ export const projects = [
       solution: "A calm, accessible mobile interface that makes emergency actions, location sharing, and contact management immediately available.",
       outcome: "A focused four-screen concept that reduces decision-making at the moment a user needs help most.",
     },
-    links: { figma: "#", github: "#" },
+    links: {
+      figma: "https://www.figma.com/design/lDdbWuipX0QPJEtpNnUsUX/HerSafe?node-id=0-1&t=aMKPjNUsfs7e4vWv-1",
+    },
   },
   {
-    title: "E-Commerce Mobile App — UX Redesign",
+    title: "Carto — E-Commerce Mobile App UI",
     role: "design",
+    summary: "A mobile e-commerce interface focused on product discovery, browsing, and a smoother checkout flow.",
     description:
-      "Full UX redesign of a fashion e-commerce app focusing on checkout flow optimization, product discovery, and seamless browsing experience across mobile devices.",
-    tags: ["Mobile App", "UX Research", "Figma", "Design System"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
+      "Designed a mobile e-commerce interface with clear product discovery, browsing, and checkout experiences.",
+    tags: ["Figma", "UI/UX", "Mobile App"],
+    image: "src\\image\\carto.png",
     impact: "40%",
     impactLabel: "Checkout Improvement",
     features: [
@@ -236,39 +291,19 @@ export const projects = [
       solution: "A simplified browsing and three-step checkout experience supported by a reusable mobile design system.",
       outcome: "The concept targets a 40% improvement in checkout completion by removing unnecessary steps and clarifying next actions.",
     },
-    links: { figma: "#", dribbble: "#" },
-  },
-  {
-    title: "Sales Analytics Dashboard — Data Viz",
-    role: "analytics",
-    description:
-      "Designed a comprehensive analytics dashboard for business intelligence, transforming complex sales data into intuitive visualizations with drill-down capabilities and real-time filtering.",
-    tags: ["Dashboard", "Data Viz", "UX Design", "Prototyping"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    impact: "12",
-    impactLabel: "Widgets Designed",
-    features: [
-      "12 customizable data widgets with drag-and-drop layout configuration",
-      "Real-time KPI tracking with sparkline trend indicators",
-      "Multi-level drill-down from summary to transaction-level detail",
-      "Responsive grid adapting from mobile to 4K desktop displays",
-      "Export-ready dashboard views for stakeholder presentations",
-    ],
-    caseStudy: {
-      problem: "Business stakeholders needed to understand sales performance without manually combining reports from multiple levels of detail.",
-      process: "Identified decision-critical KPIs, structured the dashboard from overview to transaction detail, and designed visual hierarchy for fast scanning.",
-      solution: "An interactive dashboard with filters, drill-down views, KPI trends, and export-ready summaries.",
-      outcome: "A 12-widget concept that makes complex sales patterns easier to explore and communicate in stakeholder reviews.",
+    links: {
+      figma: "https://www.figma.com/design/ae2h1CZJJabdBuifPLi9NT/Ecommerce-website?node-id=0-1&t=MjHvlQU4Z5CJRzAw-1",
     },
-    links: { figma: "#", behance: "#" },
   },
+  
   {
-    title: "Food Delivery App — UX Case Study",
+    title: "Feasto — Food Delivery App UI",
     role: "design",
+    summary: "A food delivery app UI designed to make restaurant discovery, ordering, and tracking feel simple.",
     description:
-      "Complete UX case study for a food delivery platform including user interviews, competitive analysis, wireframes, and high-fidelity prototypes with a focus on reducing order friction.",
-    tags: ["UX Research", "Mobile App", "Figma", "Case Study"],
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80",
+      "Designed a food delivery app interface with a focus on restaurant discovery, ordering, and live delivery tracking.",
+    tags: ["Figma", "UI/UX", "Mobile App"],
+    image: "src\\image\\food.png",
     impact: "25+",
     impactLabel: "User Interviews",
     features: [
@@ -284,39 +319,20 @@ export const projects = [
       solution: "A streamlined food discovery and reorder experience with live order tracking and clearer decision points.",
       outcome: "The redesigned reorder flow cuts the journey from six taps to two for returning customers.",
     },
-    links: { figma: "#", behance: "#" },
-  },
-  {
-    title: "Poster & Social Media Design System",
-    role: "design",
-    description:
-      "Developed a cohesive visual identity and design system for social media campaigns including posters, infographics, and promotional materials applying typography and color theory.",
-    tags: ["Graphic Design", "Branding", "Canva", "Typography"],
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80",
-    impact: "20+",
-    impactLabel: "Design Templates",
-    features: [
-      "Created 20+ reusable social media templates ensuring brand consistency",
-      "Applied Gestalt principles for visual hierarchy in poster layouts",
-      "Designed infographics converting complex data into scannable visuals",
-      "Consistent color palette and typography system across all platforms",
-      "Template library reducing new design turnaround by 60%",
-    ],
-    caseStudy: {
-      problem: "Campaign teams needed to publish frequent social content without losing visual consistency.",
-      process: "Defined reusable layout rules, typography, colour tokens, and content patterns around common campaign formats.",
-      solution: "A flexible template library for posts, posters, infographics, and promotional assets.",
-      outcome: "The system supports consistent visual communication while reducing new-design turnaround by 60%.",
+    links: {
+      figma: "https://www.figma.com/design/Cl2r8kvhy5EgiZJFrdOs6w/Feasto---Food-app?t=TkCcy5falZrAYi6D-1",
     },
-    links: { behance: "#", dribbble: "#" },
   },
+
+
   {
-    title: "Fitness Tracker App — Mobile UI",
+    title: "Fitora — Fitness App UI",
     role: "design",
+    summary: "A fitness app UI for planning workouts, tracking progress, and building healthier daily routines.",
     description:
-      "Designed a holistic fitness companion app with workout tracking, nutrition logging, progress visualization, and social accountability features in a clean, motivating interface.",
-    tags: ["Mobile App", "Figma", "Prototyping", "UI Design"],
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80",
+      "Designed a fitness app interface for workout planning, activity tracking, progress visualization, and motivation.",
+    tags: ["Figma", "UI/UX", "Mobile App"],
+    image: "src\\image\\fitness.png",
     impact: "15",
     impactLabel: "Screens Designed",
     features: [
@@ -332,8 +348,211 @@ export const projects = [
       solution: "A unified fitness companion that combines planning, activity logging, progress analytics, and community motivation.",
       outcome: "A cohesive 15-screen prototype that gives users one clear home for their fitness routine.",
     },
-    links: { figma: "#", dribbble: "#" },
+    links: {
+      figma: "https://www.figma.com/design/sHSG0ADM7rpMGkDroNWJ3I/Fitora-Fitness-app?node-id=0-1&t=TkCcy5falZrAYi6D-1",
+    },
   },
+  
+
+  {
+    title: "Poster & Social Media Design and Video Editing",
+    role: "design",
+    summary: "During the internship at Ibee Analytics, I created a Canva collection of posters, social media designs, and edited video content for digital campaigns.",
+    description:
+      "Created posters, social media designs, and video edits for digital campaigns using Canva.",
+    tags: ["Canva", "Graphic Design", "Video Editing"],
+    image: "src\\image\\poster.png",
+    impact: "20+",
+    impactLabel: "Design Templates",
+    features: [
+      "Created 20+ reusable social media templates ensuring brand consistency",
+      "Applied Gestalt principles for visual hierarchy in poster layouts",
+      "Designed infographics converting complex data into scannable visuals",
+      "Consistent color palette and typography system across all platforms",
+      "Template library reducing new design turnaround by 60%",
+    ],
+    caseStudy: {
+      problem: "Campaign teams needed to publish frequent social content without losing visual consistency.",
+      process: "Defined reusable layout rules, typography, colour tokens, and content patterns around common campaign formats.",
+      solution: "A flexible template library for posts, posters, infographics, and promotional assets.",
+      outcome: "The system supports consistent visual communication while reducing new-design turnaround by 60%.",
+    },
+    links: {
+      github: "https://github.com/Aishwaryaselvaraju/Logo_design",  
+      canva: [
+        "https://canva.link/w209pl8l78ubec3",
+        "https://canva.link/k0bqywiy2ins9m0",
+        "https://canva.link/00to7pg2bvq769q",
+        "https://canva.link/oei157fxp8aal44",
+        "https://canva.link/2r532kcd6vbcf0v",
+      ],
+    },
+
+  },
+
+  {
+    title: "Instagram Engagement Analytics Dashboard",
+    role: "analytics",
+    summary: "An Excel dashboard for comparing Instagram engagement, likes, and category-wise performance.",
+    description: "Created an Excel dashboard to analyze Instagram engagement, likes, and category-wise content performance.",
+    tags: ["Excel", "Data Analytics", "PivotTable", "PivotChart"],
+    image: "/images/Instagram Dashboard.jpeg",
+    imageFit: "contain",
+    impact: "2000",
+    impactLabel: "Records Analyzed",
+    features: [
+      "Engagement and likes analysis",
+      "Category-wise performance analysis",
+      "KPI tracking for quick insights",
+      "Interactive PivotTables and PivotCharts",
+      "Comparison of engagement patterns across categories",
+    ],
+    caseStudy: {
+      problem: "Raw Instagram data can be difficult to understand without a clear way to compare content performance.",
+      process: "Cleaned the data and used Excel PivotTables and PivotCharts to analyze likes and engagement across different categories.",
+      solution: "Created an interactive Excel dashboard to track KPIs and identify high-performing content categories.",
+      outcome: "The dashboard helped present Instagram engagement data in a simple and visual format for easier analysis.",
+    },
+    links: {
+      github: "https://github.com/Aishwaryaselvaraju/Excel_Instagram-Engagement-Analytics-Dashboard",
+    },
+  },
+  {
+    title: "HR Analytics Dashboard",
+    role: "analytics",
+    summary: "A Power BI dashboard for analyzing employee attrition, workforce trends, and department performance.",
+    description: "Created a Power BI HR analytics dashboard to explore employee attrition and workforce patterns through interactive visuals.",
+    tags: ["Power BI", "HR Analytics", "DAX", "Dashboard"],
+    image: "src\\image\\HR.jpeg",
+    imageFit: "contain",
+    impact: "1,470",
+    impactLabel: "Employee Records",
+    features: ["Attrition rate KPI", "Department-wise analysis", "Employee demographic insights", "Interactive filters", "Workforce trend analysis"],
+    caseStudy: {
+      problem: "HR data can be difficult to interpret when attrition and workforce patterns are spread across different reports.",
+      process: "Prepared employee data and created Power BI measures and visuals to compare attrition across departments and employee groups.",
+      solution: "An interactive HR dashboard that combines workforce KPIs, department comparisons, and attrition analysis.",
+      outcome: "The dashboard makes employee trends easier to explore and supports data-informed retention discussions.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/PowerBi_HR-Analytics-Dashboard" },
+  },
+  {
+    title: "Financial Analytics Dashboard",
+    role: "analytics",
+    summary: "A Power BI dashboard for tracking revenue, expenses, profit, and financial performance trends.",
+    description: "Built a Power BI financial analytics dashboard to compare revenue, costs, profit, and monthly business performance.",
+    tags: ["Power BI", "Financial Analytics", "DAX", "Dashboard"],
+    image: "src\\image\\Fin.jpeg",
+    imageFit: "contain",
+    impact: "12",
+    impactLabel: "Financial KPIs",
+    features: ["Revenue and expense tracking", "Profit margin analysis", "Monthly performance trends", "Interactive slicers and filters", "DAX-based KPI calculations"],
+    caseStudy: {
+      problem: "Financial data can be difficult to compare when revenue, expenses, and profit are spread across different reports.",
+      process: "Prepared the financial data and created Power BI measures and visuals for revenue, costs, profit, and time-based comparisons.",
+      solution: "An interactive Power BI dashboard that presents core financial KPIs, trends, and performance comparisons.",
+      outcome: "The dashboard makes financial results easier to understand and supports faster performance reviews.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/PowerBi_Financial-Analytical-dashboard" },
+  },
+
+  
+  {
+    title: "Personal Spending & Shopping Analysis Dashboard",
+    role: "analytics",
+    summary: "A Power BI dashboard for understanding personal spending, shopping categories, and purchase patterns.",
+    description: "Built a Power BI dashboard to analyze personal spending habits, shopping categories, and changes in expenses.",
+    tags: ["Power BI", "Personal Finance", "Data Analytics", "Dashboard"],
+    image: "src\\image\\spend.jpeg",
+    imageFit: "contain",
+    impact: "12",
+    impactLabel: "Spending Insights",
+    features: ["Category-wise spending analysis", "Monthly expense trends", "Shopping behavior breakdown", "KPI cards and filters", "Personal finance insights"],
+    caseStudy: {
+      problem: "Personal spending data can make it difficult to understand where money is going and how habits change over time.",
+      process: "Organized transaction data and created Power BI measures and visuals to compare spending by category, time, and purchase type.",
+      solution: "A personal finance dashboard that presents spending patterns through clear KPIs and interactive comparisons.",
+      outcome: "The dashboard provides a simple visual view of shopping behavior and expense distribution.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/PowerBi_Personal-Spending-Shopping-Analysis-Dashboard" },
+  },
+  {
+    title: "Sales & Profit Performance Analysis",
+    role: "analytics",
+    summary: "A Power BI dashboard for comparing sales, profit, products, regions, and business performance trends.",
+    description: "Designed a Power BI dashboard to analyze sales and profit performance across products, regions, and time periods.",
+    tags: ["Power BI", "Sales Analytics", "DAX", "Dashboard"],
+    image: "src\\image\\s&p.jpeg",
+    imageFit: "contain",
+    impact: "5",
+    impactLabel: "Performance Views",
+    features: ["Sales and profit KPIs", "Regional performance comparison", "Product-level analysis", "Time-based trend analysis", "Interactive business filters"],
+    caseStudy: {
+      problem: "Business teams need a clear way to compare sales and profit performance across different segments.",
+      process: "Prepared sales data and developed Power BI measures and visuals for products, regions, profit, and time-based comparisons.",
+      solution: "An interactive performance dashboard that connects sales and profit insights in one reporting view.",
+      outcome: "The dashboard helps identify stronger-performing segments and communicate business trends clearly.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/PowerBi_Sales-and-Profit-Performance-Analysis" },
+  },
+  {
+    title: "Excel Sales Dashboard",
+    role: "analytics",
+    summary: "An Excel dashboard for tracking sales performance, product results, regions, and revenue trends.",
+    description: "Created an Excel sales dashboard to summarize revenue, orders, products, and regional performance.",
+    tags: ["Excel", "Data Analytics", "PivotTable", "Dashboard"],
+    image: "src\\image\\sales.jpeg",
+    imageFit: "contain",
+    impact: "4",
+    impactLabel: "Sales Views",
+    features: ["Sales KPI tracking", "Product performance analysis", "Regional sales comparison", "PivotTables and charts", "Interactive Excel dashboard"],
+    caseStudy: {
+      problem: "Sales data is difficult to compare when important metrics are spread across raw worksheets.",
+      process: "Cleaned the sales data and used Excel PivotTables, charts, and KPI summaries to organize the main business metrics.",
+      solution: "A practical Excel dashboard for viewing sales performance by product, region, and reporting period.",
+      outcome: "The dashboard presents sales results in a compact format that is easy to review and share.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/Excel_Sales-Dashboard" },
+  },
+  {
+    title: "Global Sales & Profit Dashboard",
+    role: "analytics",
+    summary: "A Tableau dashboard for exploring global sales, profit, regional performance, and product trends.",
+    description: "Designed a Tableau dashboard to compare global sales and profit across regions, categories, and products.",
+    tags: ["Tableau", "Data Visualization", "Sales Analytics", "Dashboard"],
+    image: "src\\image\\global.jpeg",
+    imageFit: "contain",
+    impact: "4",
+    impactLabel: "Global Regions",
+    features: ["Regional sales map", "Profit and sales trend views", "Category and product comparisons", "Interactive dashboard actions", "Top and bottom performer analysis"],
+    caseStudy: {
+      problem: "Global sales data needs multiple views to explain regional performance and profit differences.",
+      process: "Explored the dataset and built coordinated Tableau views for geography, products, categories, sales, and profit.",
+      solution: "An interactive Tableau dashboard that connects regional and product-level sales insights.",
+      outcome: "The dashboard makes global performance patterns easier to explore and communicate.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/tableau_Global-Sales-and-Profit-Performance-Dashboard" },
+  },
+  
+  {
+    title: "Titanic Survival Analysis",
+    role: "analytics",
+    summary: "A Python analysis of Titanic passenger data to identify the factors associated with survival.",
+    description: "Analyzed the Titanic dataset in Python to explore survival rates across passenger demographics and travel classes.",
+    tags: ["Python", "Pandas", "Data Analysis", "Visualization"],
+    image: "https://images.unsplash.com/photo-1498623116890-37e912163d5d?w=600&q=80",
+    impact: "891",
+    impactLabel: "Passengers Analyzed",
+    features: ["Data cleaning and preparation", "Survival rate comparisons", "Age and gender analysis", "Passenger class analysis", "Exploratory data visualizations"],
+    caseStudy: {
+      problem: "Passenger-level data needs structured exploration to reveal the factors connected to survival.",
+      process: "Cleaned the dataset with Python and used Pandas and visualizations to compare survival across key passenger groups.",
+      solution: "A focused exploratory analysis that explains survival patterns through demographic and class comparisons.",
+      outcome: "The analysis presents clear insights into how passenger characteristics related to survival outcomes.",
+    },
+    links: { github: "https://github.com/Aishwaryaselvaraju/CODSOFT" },
+  },
+  
 ];
 
 /* ------------------------------------------------------------------ */
@@ -343,7 +562,7 @@ export const projects = [
 export const certifications = [
   {
     title: "Generative AI in Action",
-    issuer: "Industry Certification",
+    issuer: "IBM SkillsBuild",
     icon: "🤖",
     color: "#6366f1",
     description: "Practical understanding of generative AI tools and their application in design workflows and creative problem-solving.",
@@ -359,7 +578,7 @@ export const certifications = [
   },
   {
     title: "Data Visualisation",
-    issuer: "Tata Group",
+    issuer: "Kaggle Learn",
     icon: "📈",
     color: "#10b981",
     description: "Skills in visualizing complex datasets, creating meaningful dashboards, and communicating design insights through data.",
@@ -367,7 +586,7 @@ export const certifications = [
   },
   {
     title: "Google UX Design Foundations",
-    issuer: "Google Career Certificates",
+    issuer: "IBM SkillsBuild ",
     icon: "🎨",
     color: "#ec4899",
     description: "Foundations in user-centred design, empathy mapping, wireframing, and usability testing.",
@@ -375,19 +594,19 @@ export const certifications = [
   },
   {
     title: "Python for Data Analysis",
-    issuer: "Online Learning Certificate",
+    issuer: "Infosys Springboard",
     icon: "🐍",
     color: "#8b5cf6",
     description: "Applied Python skills for data cleaning, exploratory analysis, and communicating findings.",
-    file: "/certificate-placeholder.svg",
+    file: pythonCertificate,
   },
   {
-    title: "Fundamentals of Data Visualisation",
-    issuer: "Professional Development Certificate",
+    title: "Data Analysis",
+    issuer: "Novi Tech Research & Development",
     icon: "📊",
     color: "#14b8a6",
     description: "Principles for selecting effective charts and building clear, decision-ready visual stories.",
-    file: "/certificate-placeholder.svg",
+    file: dataAnalysisCertificate,
   },
 ];
 
@@ -423,7 +642,7 @@ export const achievements = [
     color: "#6366f1",
   },
   {
-    title: "4 Internships Across Domains",
+    title: "5 Internships Across Domains",
     description: "Completed internships in software engineering, web development, cyber forensics, and data science — demonstrating rapid learning and cross-domain versatility.",
     icon: "💼",
     color: "#f59e0b",

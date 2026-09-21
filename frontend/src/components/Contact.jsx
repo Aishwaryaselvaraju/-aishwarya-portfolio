@@ -7,11 +7,8 @@ import {
   RiMapPinFill,
   RiLinkedinFill,
   RiGithubFill,
-  RiBehanceFill,
-  RiDribbbleFill,
   RiDownloadFill,
   RiCheckLine,
-  RiErrorWarningLine,
 } from "react-icons/ri";
 
 export default function Contact() {
@@ -81,8 +78,6 @@ export default function Contact() {
   const socialLinks = [
     { icon: RiLinkedinFill, url: personalInfo.linkedin, label: "LinkedIn", color: "#0077b5" },
     { icon: RiGithubFill, url: personalInfo.github, label: "GitHub", color: "#333" },
-    { icon: RiBehanceFill, url: personalInfo.behance, label: "Behance", color: "#1769ff" },
-    { icon: RiMailFill, url: `mailto:${personalInfo.email}`, label: "Email", color: "#ea4335" },
   ];
 
   return (
