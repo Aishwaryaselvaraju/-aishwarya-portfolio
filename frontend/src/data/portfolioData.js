@@ -20,7 +20,7 @@ import fitnessImage from "../image/fitness.png";
 import posterImage from "../image/poster.png";
 import instagramDashboardImage from "../image/Instagram Dashboard.jpeg";
 import hrImage from "../image/HR.jpeg";
-import financialImage from "../image/fin.jpeg";
+import financialImage from "../image/fin.png";
 import spendingImage from "../image/spend.jpeg";
 import salesProfitImage from "../image/s&p.jpeg";
 import salesImage from "../image/sales.jpeg";

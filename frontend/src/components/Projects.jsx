@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { personalInfo, projects } from "../data/portfolioData";
-import { RiArrowRightLine, RiCloseLine, RiExternalLinkLine, RiFigmaLine, RiGithubLine, RiLinkedinFill } from "react-icons/ri";
+import { projects } from "../data/portfolioData";
+import { RiArrowRightLine, RiCloseLine, RiExternalLinkLine, RiFigmaLine, RiGithubLine } from "react-icons/ri";
 import { SiCanva } from "react-icons/si";
 
 const tagStyles = {
@@ -58,7 +58,7 @@ export default function Projects() {
                   <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)] mb-2">{project.role === "analytics" ? "Data Analytics" : "UI/UX Design"}</p><h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{project.title}</h3><p className="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-2">{project.summary}</p>
                 </div>
               </button>
-              <div className="flex items-center justify-between gap-3 px-5 pb-5 sm:px-6 sm:pb-6"><button type="button" onClick={() => setSelectedProject(project)} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--primary)] hover:underline">View case study <RiArrowRightLine /></button><div className="flex items-center gap-2"><a href={personalInfo.github} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} GitHub profile`} title="GitHub"><RiGithubLine size={17} /></a><a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} LinkedIn profile`} title="LinkedIn"><RiLinkedinFill size={17} /></a></div></div>
+              <div className="flex items-center justify-between gap-3 px-5 pb-5 sm:px-6 sm:pb-6"><button type="button" onClick={() => setSelectedProject(project)} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--primary)] hover:underline">View case study <RiArrowRightLine /></button><div className="flex items-center gap-2">{project.links?.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} GitHub repository`} title="GitHub repository"><RiGithubLine size={17} /></a>}{project.links?.figma && <a href={project.links.figma} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="p-2 rounded-lg text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)]" aria-label={`${project.title} Figma design`} title="Figma design"><RiFigmaLine size={17} /></a>}</div></div>
             </article>
           ))}
         </div>
