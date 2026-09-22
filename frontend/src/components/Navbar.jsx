@@ -57,10 +57,13 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => scrollTo("#hero")}
-            className="text-xl sm:text-2xl font-extrabold gradient-text hover:scale-105 transition-transform"
+            className="inline-flex items-center gap-2 rounded-xl hover:scale-105 transition-transform"
+            aria-label="Go to home"
           >
-            Aishwarya KS
-            <span className="text-[var(--primary)]">.</span>
+            <img src="/aishwarya-logo.svg" alt="Aishwarya logo" className="h-8 w-8 sm:h-10 sm:w-10" />
+            <span className="gradient-text text-lg sm:text-xl" style={{ fontFamily: "Dancing Script, cursive" }}>
+              Aishwarya
+            </span>
           </button>
 
           {/* Desktop Nav */}

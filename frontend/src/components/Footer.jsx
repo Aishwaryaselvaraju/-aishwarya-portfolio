@@ -27,7 +27,7 @@ export default function Footer() {
               {personalInfo.firstName} {personalInfo.lastName}
             </p>
             <p className="text-xs text-[var(--text-muted)]">
-              UI/UX Designer &mdash; Crafting meaningful digital experiences
+              Data Analyst | UI/UX Designer &mdash; Crafting meaningful digital experiences
             </p>
           </div>
 

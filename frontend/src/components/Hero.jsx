@@ -43,7 +43,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 w-full py-24 md:py-0">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 w-full py-24 md:py-28">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Avatar */}
           <div className="stagger-item shrink-0 order-1 md:order-2">
@@ -63,17 +63,17 @@ export default function Hero() {
 
           {/* Text Content */}
           <div className="text-center md:text-left flex-1 order-2 md:order-1">
-            <div className="stagger-item inline-flex items-center gap-2 mt-3 px-4 py-1.5 rounded-full bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-semibold tracking-wider uppercase mb-5">
-              <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
-              UI/UX Designer & Data Analyst
-            </div>
-
-            <h1 className="stagger-item text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] mb-4">
+            <h1 className="stagger-item text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.08] mb-3">
               Hi, I'm{" "}
               <span className="gradient-text">{personalInfo.firstName}</span>
               <br />
               <span className="text-[var(--text-primary)]">{personalInfo.lastName}</span>
             </h1>
+
+            <p className="stagger-item inline-flex items-center gap-2 mb-4 rounded-full bg-[var(--primary-subtle)] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)] animate-pulse" />
+              {personalInfo.title}
+            </p>
 
             <p className="stagger-item text-lg sm:text-xl text-[var(--text-secondary)] font-normal leading-relaxed max-w-xl mb-6">
               {personalInfo.tagline}
