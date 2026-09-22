@@ -1,6 +1,7 @@
 import {
   RiLinkedinFill,
   RiGithubFill,
+  RiMailFill,
 } from "react-icons/ri";
 import genAiCertificate from "../certificate/Gen AI.png";
 import uxDesignCertificate from "../certificate/UX Design.png";
@@ -44,6 +45,7 @@ export const personalInfo = {
   languages: ["Tamil", "English"],
   linkedin: "https://www.linkedin.com/in/aishwarya1413",
   github: "https://github.com/aishwaryaselvaraju",
+  mail: "mailto:aishwaryaselvaraju14@gmail.com",
   resumePath: "/AishwaryaSelvaraju_Resume.pdf",
   tagline: "Designing intuitive digital experiences and turning data into clear, actionable stories.",
   bio: [
@@ -58,10 +60,25 @@ export const personalInfo = {
     { value: "8+", label: "Data Projects" },
   ],
   socialLinks: [
-    { icon: RiLinkedinFill, url: "https://www.linkedin.com/in/aishwarya1413", label: "LinkedIn" },
-    { icon: RiGithubFill, url: "https://github.com/aishwaryaselvaraju", label: "GitHub" },
+    { icon: RiLinkedinFill, url: "https://www.linkedin.com/in/aishwarya1413", label: "LinkedIn", color: "#0a66c2" },
+    { icon: RiGithubFill, url: "https://github.com/aishwaryaselvaraju", label: "GitHub", color: "#8b5cf6" },
+    { icon: RiMailFill, url: "mailto:aishwaryaselvaraju14@gmail.com", label: "Email", color: "#ec4899" },
    ],
 };
+
+
+
+export const patentContribution = {
+  title: "IriSafe: A Real-Time Biometric Safety Wearable Featuring Iris-Based Authentication, AI-Driven Threat Intelligence, and Blockchain-Secured Evidence Storage",
+  description: "Co-inventor of a published Indian patent for a biometric safety wearable integrating iris authentication, AI threat detection intelligence, and blockchain technology for tamper-proof evidence storage.",
+  publicationDate: "13/06/2025",
+  filingDate: "31/05/2025",
+  applicationNumber: "202541053097",
+  field: "Bio-medical Engineering",
+  authority: "IP India (Govt. of India)",
+  inventors: ["Dr. R. Jayamala", "Mayilraj R", "Aishwarya K. S", "Jemuna U" ],
+};
+
 
 /* ------------------------------------------------------------------ */
 /*  SKILLS                                                             */
@@ -645,11 +662,36 @@ export const education = [
       "Combined technical engineering curriculum with design specialisation",
     ],
   },
+  {
+    degree: "Higher Secondary Certificate (HSC) – Bio-Maths",
+    school: "Karpaga Vinayaga Matriculation Higher Secondary School",
+    location: "Pudukkottai",
+    period: "Jul 2020 – May 2022",
+    score: "Grade: 90.50%",
+    icon: "📘",
+    highlights: [
+      "Completed higher secondary education with Biology and Mathematics",
+      "Actively participated in health awareness and sports activities",
+      "Demonstrated leadership, discipline, and social responsibility",
+    ],
+  },
+  {
+    degree: "Secondary School Leaving Certificate (SSLC)",
+    school: "Karpaga Vinayaga Matriculation Higher Secondary School",
+    location: "Pudukkottai",
+    period: "Jul 2019 – May 2020",
+    score: "Grade:92.20%",
+    icon: "🏫",
+    highlights: [
+      "Completed secondary education at Karpaga Vinayaga Matriculation Higher Secondary School",
+    ],
+  },
 ];
 
 /* ------------------------------------------------------------------ */
 /*  ACHIEVEMENTS                                                       */
 /* ------------------------------------------------------------------ */
+
 
 export const achievements = [
   {
@@ -675,6 +717,12 @@ export const achievements = [
     description: "Worked with engineering, marketing, and client teams across multiple internships — translating stakeholder requirements into impactful visual solutions.",
     icon: "🤝",
     color: "#10b981",
+  },
+  {
+    title: "Published Patent Co-Inventor",
+    description: "Co-inventor of IriSafe, a real-time biometric safety wearable patent published by IP India (Application No. 202541053097), contributing to iris authentication, AI threat intelligence, and blockchain-secured evidence storage.",
+    icon: "🏆",
+    color: "#fbbf24",
   },
 ];
 

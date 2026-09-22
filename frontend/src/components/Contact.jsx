@@ -47,27 +47,16 @@ export default function Contact() {
     if (!validate()) return;
 
     setStatus("loading");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setStatus(null), 4000);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      const mailBody = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0A%0D%0A${form.message}`;
-      window.location.href = `mailto:${personalInfo.email}?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${mailBody}`;
-      setStatus("success");
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus(null), 4000);
-    }
+    const mailBody = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      "",
+      form.message,
+    ].join("\n");
+    window.location.href = `mailto:aishwaryaselvaraju14@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(mailBody)}`;
+    setStatus("success");
+    setForm({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => setStatus(null), 4000);
   };
 
   const handleChange = (field) => (e) => {
@@ -78,6 +67,7 @@ export default function Contact() {
   const socialLinks = [
     { icon: RiLinkedinFill, url: personalInfo.linkedin, label: "LinkedIn", color: "#0077b5" },
     { icon: RiGithubFill, url: personalInfo.github, label: "GitHub", color: "#333" },
+    { icon: RiMailFill, url: "mailto:aishwaryaselvaraju14@gmail.com", label: "Email", color: "var(--primary)" },
   ];
 
   return (
@@ -95,12 +85,12 @@ export default function Contact() {
           {/* Contact Info Sidebar */}
           <div className="lg:col-span-2 space-y-5 stagger-item">
             {/* Contact Details */}
-            <div className="card p-6">
-              <h3 className="text-sm font-bold text-[var(--text-primary)] mb-5">
+            <div className="card p-6 sm:p-7">
+              <h3 className="text-sm font-bold text-[var(--text-primary)] mb-6">
                 Contact Information
               </h3>
-              <div className="space-y-4">
-                <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-4 group">
+              <div className="space-y-5">
+                <a href="mailto:aishwaryaselvaraju14@gmail.com" className="flex items-center gap-4 group">
                   <div className="w-11 h-11 rounded-2xl bg-[var(--primary-subtle)] flex items-center justify-center text-[var(--primary)] group-hover:scale-110 transition-transform">
                     <RiMailFill size={17} />
                   </div>
@@ -148,8 +138,7 @@ export default function Contact() {
                   <a
                     key={s.label}
                     href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(s.label !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="w-10 h-10 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] hover:text-white flex items-center justify-center border border-[var(--border-color)] transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
                     style={{ hover: { backgroundColor: s.color } }}
                     onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = s.color; e.currentTarget.style.borderColor = 'transparent'; }}

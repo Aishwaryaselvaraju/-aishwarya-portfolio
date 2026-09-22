@@ -64,7 +64,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-0.5">
+          <div className="hidden md:flex items-center gap-1.5 lg:gap-2">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -78,7 +78,7 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <div className="w-px h-6 bg-[var(--border-color)] mx-2" />
+            <div className="w-px h-6 bg-[var(--border-color)] mx-3" />
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)] transition-all"

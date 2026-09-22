@@ -63,7 +63,7 @@ export default function Hero() {
 
           {/* Text Content */}
           <div className="text-center md:text-left flex-1 order-2 md:order-1">
-            <div className="stagger-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-semibold tracking-wider uppercase mb-5">
+            <div className="stagger-item inline-flex items-center gap-2 mt-3 px-4 py-1.5 rounded-full bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-semibold tracking-wider uppercase mb-5">
               <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
               UI/UX Designer & Data Analyst
             </div>
@@ -131,10 +131,20 @@ export default function Hero() {
                   <a
                     key={s.label}
                     href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-2xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] hover:text-[var(--primary)] hover:bg-[var(--primary-subtle)] border border-[var(--border-color)] hover:border-[var(--primary)]/20 transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
+                    {...(s.label !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="p-3 rounded-2xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] border border-[var(--border-color)] transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
+                    onMouseEnter={(event) => {
+                      event.currentTarget.style.color = s.color;
+                      event.currentTarget.style.borderColor = s.color;
+                      event.currentTarget.style.backgroundColor = `${s.color}18`;
+                    }}
+                    onMouseLeave={(event) => {
+                      event.currentTarget.style.color = "";
+                      event.currentTarget.style.borderColor = "";
+                      event.currentTarget.style.backgroundColor = "";
+                    }}
                     aria-label={s.label}
+                    title={s.label}
                   >
                     <Icon size={17} />
                   </a>

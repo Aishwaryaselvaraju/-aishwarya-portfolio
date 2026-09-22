@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { personalInfo } from "../data/portfolioData";
+import { patentContribution, personalInfo } from "../data/portfolioData";
 
 function renderBio(text) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => {
@@ -102,6 +102,40 @@ export default function About() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-12 card overflow-hidden border-[var(--secondary)]/40 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-card)] to-[var(--primary-subtle)] p-6 sm:p-8 stagger-item">
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--secondary)]/10 px-3 py-1.5 text-xs font-bold text-[var(--secondary)]">
+                Patent Published · Govt. of India
+              </span>
+              <h3 className="mt-4 max-w-4xl text-xl sm:text-2xl font-extrabold leading-tight text-[var(--text-primary)]">
+                {patentContribution.title}
+              </h3>
+            </div>
+            <span className="rounded-lg border border-[var(--primary)]/30 px-3 py-1.5 font-mono text-xs text-[var(--primary)]">
+              App No: {patentContribution.applicationNumber}
+            </span>
+          </div>
+
+          <p className="max-w-4xl text-sm sm:text-base leading-relaxed text-[var(--text-secondary)]">
+            {patentContribution.description}
+          </p>
+
+          <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)]/50 p-4 sm:grid-cols-4">
+            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Publication Date</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.publicationDate}</p></div>
+            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Filing Date</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.filingDate}</p></div>
+            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Field of Invention</p><p className="mt-1 text-sm font-bold capitalize text-[var(--secondary)]">{patentContribution.field}</p></div>
+            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Authority</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.authority}</p></div>
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[var(--border-color)] pt-5 text-sm text-[var(--text-secondary)]">
+            <span className="font-bold text-[var(--text-primary)]">Contributors:</span>
+            {patentContribution.inventors.map((inventor) => (
+              <span key={inventor} className={inventor === "Aishwarya K. S." ? "font-bold text-[var(--secondary)]" : ""}>{inventor}</span>
+            ))}
           </div>
         </div>
       </div>
