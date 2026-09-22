@@ -95,36 +95,8 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="stagger-item flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
-              <button
-                onClick={() => scrollTo("projects")}
-                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-sm text-white shadow-lg shadow-[var(--primary)]/25 hover:shadow-xl hover:shadow-[var(--primary)]/30 transition-all duration-300 hover:scale-[1.03]"
-                style={{
-                  background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
-                }}
-              >
-                View Projects
-                <RiArrowRightSLine size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <a
-                href={personalInfo.resumePath}
-                download
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-sm border-2 border-[var(--border-color)] text-[var(--text-primary)] hover:border-[var(--primary)]/30 hover:bg-[var(--primary-subtle)] transition-all duration-300"
-              >
-                <RiDownloadFill size={16} />
-                Resume
-              </a>
-              <button
-                onClick={() => scrollTo("contact")}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] hover:bg-[var(--primary-subtle)] hover:text-[var(--primary)] transition-all duration-300 border border-[var(--border-color)]"
-              >
-                Contact
-              </button>
-            </div>
-
             {/* Social */}
-            <div className="stagger-item flex justify-center md:justify-start gap-2 mt-8">
+            <div className="stagger-item flex justify-center md:justify-start gap-3 mt-2 mb-6">
               {personalInfo.socialLinks.map((s) => {
                 const Icon = s.icon;
                 return (
@@ -132,7 +104,7 @@ export default function Hero() {
                     key={s.label}
                     href={s.url}
                     {...(s.label !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="p-3 rounded-2xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] border border-[var(--border-color)] transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg-tertiary)] text-[var(--text-primary)] border border-[var(--border-color)] transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
                     onMouseEnter={(event) => {
                       event.currentTarget.style.color = s.color;
                       event.currentTarget.style.borderColor = s.color;
@@ -146,10 +118,32 @@ export default function Hero() {
                     aria-label={s.label}
                     title={s.label}
                   >
-                    <Icon size={17} />
+                    <Icon size={18} />
                   </a>
                 );
               })}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="stagger-item flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+              <button
+                onClick={() => scrollTo("projects")}
+                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm text-white shadow-lg shadow-[var(--primary)]/25 hover:shadow-xl hover:shadow-[var(--primary)]/30 transition-all duration-300 hover:scale-[1.03]"
+                style={{
+                  background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+                }}
+              >
+                View Projects
+                <RiArrowRightSLine size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <a
+                href={personalInfo.resumePath}
+                download
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm border border-[var(--border-color)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:border-[var(--primary)]/30 hover:bg-[var(--primary-subtle)] transition-all duration-300"
+              >
+                <RiDownloadFill size={16} />
+                Resume
+              </a>
             </div>
           </div>
         </div>

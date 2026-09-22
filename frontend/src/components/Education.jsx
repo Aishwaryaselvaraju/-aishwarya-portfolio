@@ -26,7 +26,6 @@ export default function Education() {
     <section id="education" className="section" ref={ref}>
       <div className="section-container max-w-4xl mx-auto">
         <div className="section-header stagger-item">
-          <span className="section-label">Academics</span>
           <h2 className="section-title">Education</h2>
           <p className="section-subtitle">My academic background and qualifications</p>
         </div>
@@ -39,8 +38,8 @@ export default function Education() {
             <div className="flex flex-col sm:flex-row gap-6">
               {/* Icon */}
               <div className="shrink-0">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-3xl shadow-lg shadow-[var(--primary)]/20">
-                  {edu.icon}
+                <div className="icon-neon w-16 h-16 rounded-2xl shadow-lg shadow-[var(--primary)]/20">
+                  {edu.icon && <edu.icon size={28} />}
                 </div>
               </div>
 

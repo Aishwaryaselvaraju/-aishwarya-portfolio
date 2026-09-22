@@ -60,7 +60,6 @@ export default function Skills() {
     <section id="skills" className="section" ref={ref}>
       <div className="section-container">
         <div className="section-header stagger-item">
-          <span className="section-label">Expertise</span>
           <h2 className="section-title">Skills & Tools</h2>
           <p className="section-subtitle">Technologies and abilities I bring to every project</p>
         </div>
@@ -69,8 +68,8 @@ export default function Skills() {
           {skillCategories.map((cat) => (
             <div key={cat.title} className="card p-6 sm:p-7 stagger-item">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl bg-[var(--primary-subtle)] flex items-center justify-center text-lg">
-                  {cat.icon}
+                <div className="icon-neon w-10 h-10 rounded-xl text-lg">
+                  {cat.icon && <cat.icon size={20} />}
                 </div>
                 <h3 className="font-bold text-[var(--text-primary)]">{cat.title}</h3>
               </div>

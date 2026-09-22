@@ -36,7 +36,6 @@ export default function About() {
     <section id="about" className="section" ref={ref}>
       <div className="section-container">
         <div className="section-header stagger-item">
-          <span className="section-label">About</span>
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">Passionate about crafting meaningful digital experiences</p>
         </div>
@@ -54,10 +53,9 @@ export default function About() {
             ))}
           </div>
 
-          {/* Stats & Quick Info */}
+          {/* Stats */}
           <div className="lg:col-span-2 stagger-item">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-2 gap-3">
               {personalInfo.stats.map((stat) => (
                 <div
                   key={stat.label}
@@ -72,43 +70,13 @@ export default function About() {
                 </div>
               ))}
             </div>
-
-            {/* Quick Info */}
-            <div className="card p-5">
-              <h4 className="text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.12em] mb-3">
-                Quick Info
-              </h4>
-              <div className="space-y-2.5">
-                {[
-                  { label: "📍 Location", value: personalInfo.location },
-                  { label: "📧 Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-                  { label: "📞 Phone", value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-3">
-                    <span className="text-sm">{item.label.split(" ")[0]}</span>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--primary)] transition-colors truncate"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span className="text-sm font-medium text-[var(--text-primary)] truncate">
-                        {item.value}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="mt-12 card overflow-hidden border-[var(--secondary)]/40 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-card)] to-[var(--primary-subtle)] p-6 sm:p-8 stagger-item">
+        <div className="mt-12 card overflow-hidden border-[var(--primary)]/40 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-card)] to-[var(--primary-subtle)] p-6 sm:p-8 stagger-item">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--secondary)]/10 px-3 py-1.5 text-xs font-bold text-[var(--secondary)]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)]/10 px-3 py-1.5 text-xs font-bold text-[var(--primary)]">
                 Patent Published · Govt. of India
               </span>
               <h3 className="mt-4 max-w-4xl text-xl sm:text-2xl font-extrabold leading-tight text-[var(--text-primary)]">
@@ -127,15 +95,28 @@ export default function About() {
           <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)]/50 p-4 sm:grid-cols-4">
             <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Publication Date</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.publicationDate}</p></div>
             <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Filing Date</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.filingDate}</p></div>
-            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Field of Invention</p><p className="mt-1 text-sm font-bold capitalize text-[var(--secondary)]">{patentContribution.field}</p></div>
+            <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Field of Invention</p><p className="mt-1 text-sm font-bold capitalize text-[var(--primary)]">{patentContribution.field}</p></div>
             <div><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Authority</p><p className="mt-1 text-sm font-bold text-[var(--text-primary)]">{patentContribution.authority}</p></div>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[var(--border-color)] pt-5 text-sm text-[var(--text-secondary)]">
             <span className="font-bold text-[var(--text-primary)]">Contributors:</span>
-            {patentContribution.inventors.map((inventor) => (
-              <span key={inventor} className={inventor === "Aishwarya K. S." ? "font-bold text-[var(--secondary)]" : ""}>{inventor}</span>
-            ))}
+            {patentContribution.inventors.map((inventor) => {
+              const isMyName = inventor.replace(/\.$/, "") === "Aishwarya K. S";
+
+              return (
+                <span
+                  key={inventor}
+                  className={
+                    isMyName
+                      ? "inline-flex items-center rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-2.5 py-1 font-extrabold text-[var(--primary)] shadow-sm"
+                      : ""
+                  }
+                >
+                  {inventor}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>

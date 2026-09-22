@@ -41,7 +41,7 @@ export default function Projects() {
     <section id="projects" className="section" ref={ref}>
       <div className="section-container">
         <div className="section-header stagger-item">
-          <span className="section-label">Portfolio</span><h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">Browse case studies across UI/UX design and data analytics.</p>
         </div>
         <div className="stagger-item flex flex-wrap justify-center gap-2 mb-8" role="tablist" aria-label="Filter projects by discipline">

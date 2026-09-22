@@ -19,52 +19,67 @@ function TimelineItem({ item }) {
       </div>
 
       {/* Card */}
-      <div className="card p-6 sm:p-7">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-          <div>
-            <h3 className="text-lg font-bold text-[var(--text-primary)]">{item.role}</h3>
-            <p className="text-sm font-semibold text-[var(--primary)]">{item.company}</p>
-          </div>
-          <div className="flex items-center gap-3 text-xs text-[var(--text-tertiary)] shrink-0 flex-wrap">
-            <span className="flex items-center gap-1.5">
-              <RiCalendarLine size={13} />
-              {item.period}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <RiMapPinLine size={13} />
-              {item.location}
-            </span>
-          </div>
-        </div>
+      <div
+        className="card group relative p-6 sm:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+        style={{
+          borderColor: `${item.color || "var(--primary)"}55`,
+          boxShadow: `0 12px 30px ${item.color || "var(--primary)"}18`,
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            background: `linear-gradient(135deg, ${item.color || "var(--primary)"}18, transparent 60%)`,
+          }}
+        />
 
-        {/* Impact number */}
-        {item.impact && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-bold mb-4">
-            <span className="text-lg">{item.impact}</span>
-            <span className="font-medium">{item.impactLabel}</span>
+        <div className="relative">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+            <div>
+              <h3 className="text-lg font-bold text-[var(--text-primary)]">{item.role}</h3>
+              <p className="text-sm font-semibold text-[var(--primary)]">{item.company}</p>
+            </div>
+            <div className="flex items-center gap-3 text-xs text-[var(--text-tertiary)] shrink-0 flex-wrap">
+              <span className="flex items-center gap-1.5">
+                <RiCalendarLine size={13} />
+                {item.period}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <RiMapPinLine size={13} />
+                {item.location}
+              </span>
+            </div>
           </div>
-        )}
 
-        {/* Description */}
-        <ul className="space-y-2.5 mb-4">
-          {item.description.map((desc, i) => (
-            <li key={i} className="text-sm text-[var(--text-secondary)] leading-relaxed flex items-start gap-2.5">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary)] opacity-50 shrink-0" />
-              {renderBold(desc)}
-            </li>
-          ))}
-        </ul>
+          {/* Impact number */}
+          {item.impact && (
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[var(--primary-subtle)] text-[var(--primary)] text-xs font-bold mb-4">
+              <span className="text-lg">{item.impact}</span>
+              <span className="font-medium">{item.impactLabel}</span>
+            </div>
+          )}
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {item.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 text-[11px] font-semibold rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] border border-[var(--border-color)]"
-            >
-              {tag}
-            </span>
-          ))}
+          {/* Description */}
+          <ul className="space-y-2.5 mb-4">
+            {item.description.map((desc, i) => (
+              <li key={i} className="text-sm text-[var(--text-secondary)] leading-relaxed flex items-start gap-2.5">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary)] opacity-50 shrink-0" />
+                {renderBold(desc)}
+              </li>
+            ))}
+          </ul>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5">
+            {item.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-[11px] font-semibold rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] border border-[var(--border-color)]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -106,7 +121,6 @@ export default function Experience() {
     <section id="experience" className="section" ref={ref}>
       <div className="section-container max-w-4xl mx-auto">
         <div className="section-header stagger-item">
-          <span className="section-label">Background</span>
           <h2 className="section-title">Experience</h2>
           <p className="section-subtitle">Professional journey and internship highlights</p>
         </div>

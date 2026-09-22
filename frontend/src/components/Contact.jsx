@@ -74,7 +74,6 @@ export default function Contact() {
     <section id="contact" className="section" ref={ref}>
       <div className="section-container">
         <div className="section-header stagger-item">
-          <span className="section-label">Connect</span>
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">
             Have a project, opportunity, or just want to say hello? Let's talk.
@@ -91,7 +90,7 @@ export default function Contact() {
               </h3>
               <div className="space-y-5">
                 <a href="mailto:aishwaryaselvaraju14@gmail.com" className="flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-2xl bg-[var(--primary-subtle)] flex items-center justify-center text-[var(--primary)] group-hover:scale-110 transition-transform">
+                  <div className="icon-neon w-11 h-11 rounded-2xl group-hover:scale-110 transition-transform">
                     <RiMailFill size={17} />
                   </div>
                   <div>
@@ -103,7 +102,7 @@ export default function Contact() {
                 </a>
 
                 <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-2xl bg-[var(--accent-subtle)] flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-transform">
+                  <div className="icon-neon w-11 h-11 rounded-2xl group-hover:scale-110 transition-transform">
                     <RiPhoneFill size={17} />
                   </div>
                   <div>
@@ -115,7 +114,7 @@ export default function Contact() {
                 </a>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-500">
+                  <div className="icon-neon w-11 h-11 rounded-2xl">
                     <RiMapPinFill size={17} />
                   </div>
                   <div>

@@ -22,13 +22,20 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <p className="text-lg font-extrabold gradient-text mb-1">
-              {personalInfo.firstName} {personalInfo.lastName}
-            </p>
-            <p className="text-xs text-[var(--text-muted)]">
-              Data Analyst | UI/UX Designer &mdash; Crafting meaningful digital experiences
-            </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center md:text-left">
+            <img
+              src="/aishwarya-logo.svg"
+              alt="Aishwarya logo"
+              className="w-12 h-12 object-contain drop-shadow-[0_0_10px_rgba(99,102,241,0.35)]"
+            />
+            <div>
+              <p className="text-lg font-extrabold gradient-text mb-1">
+                {personalInfo.firstName} {personalInfo.lastName}
+              </p>
+              <p className="text-xs text-[var(--text-muted)]">
+                Data Analyst | UI/UX Designer &mdash; Crafting meaningful digital experiences
+              </p>
+            </div>
           </div>
 
           {/* Social */}
@@ -52,7 +59,7 @@ export default function Footer() {
           <p className="text-xs text-[var(--text-muted)] text-center sm:text-left">
             &copy; {new Date().getFullYear()}{" "}
             <span className="font-semibold text-[var(--text-tertiary)]">{personalInfo.firstName} {personalInfo.lastName}</span>
-            . Crafted with <span className="text-red-400">&hearts;</span> using React &amp; Tailwind CSS.
+            . All rights reserved. Built with React &amp; Tailwind CSS.
           </p>
           <button
             onClick={scrollToTop}

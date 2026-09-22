@@ -62,7 +62,7 @@ export default function Navbar() {
           >
             <img src="/aishwarya-logo.svg" alt="Aishwarya logo" className="h-8 w-8 sm:h-10 sm:w-10" />
             <span className="gradient-text text-lg sm:text-xl" style={{ fontFamily: "Dancing Script, cursive" }}>
-              Aishwarya
+              Aishwarya Selvaraju
             </span>
           </button>
 

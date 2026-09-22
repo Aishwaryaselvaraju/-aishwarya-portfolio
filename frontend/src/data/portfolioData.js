@@ -2,6 +2,17 @@ import {
   RiLinkedinFill,
   RiGithubFill,
   RiMailFill,
+  RiCodeBoxLine,
+  RiBarChartBoxLine,
+  RiPaletteLine,
+  RiSparklingLine,
+  RiBrainLine,
+  RiGraduationCapLine,
+  RiBookOpenLine,
+  RiBuilding2Line,
+  RiBriefcase3Line,
+  RiAwardLine,
+  RiUserStarLine,
 } from "react-icons/ri";
 import genAiCertificate from "../certificate/Gen AI.png";
 import uxDesignCertificate from "../certificate/UX Design.png";
@@ -47,12 +58,13 @@ export const personalInfo = {
   github: "https://github.com/aishwaryaselvaraju",
   mail: "mailto:aishwaryaselvaraju14@gmail.com",
   resumePath: "/AishwaryaSelvaraju_Resume.pdf",
-  tagline: "Designing intuitive digital experiences and turning data into clear, actionable stories.",
+  tagline:
+  "Designing meaningful experiences. Turning data into insights.",
   bio: [
-    "I am a ** Data Analyst & UI/UX Designer ** who pairs human-centered design with evidence-led problem solving. I create accessible digital experiences in **Figma** and turn complex datasets into clear, useful insights.",
-    "Currently pursuing **B.Tech in Information Technology** at Anna University (BIT Campus, Trichy) with a CGPA of **8.2**. My technical foundation helps me move comfortably between research, interface design, data cleaning, and visualization.",
-    "I am seeking opportunities to apply **design thinking and data analysis**, collaborate with cross-functional teams, and deliver products that are both delightful to use and measurable in impact.",
-  ],
+  "I’m a **UI/UX Designer and Data Analyst** who combines creative design with data-driven thinking. I create intuitive experiences in **Figma** and turn complex data into clear, actionable insights.",
+
+  "A B.Tech IT graduate from Anna University with a CGPA of **8.2**, I’m passionate about solving real-world problems through design, data, and technology."
+],
   stats: [
     { value: "12+", label: "Design Projects" },
     { value: "5+", label: "Design Tools" },
@@ -61,8 +73,8 @@ export const personalInfo = {
   ],
   socialLinks: [
     { icon: RiLinkedinFill, url: "https://www.linkedin.com/in/aishwarya1413", label: "LinkedIn", color: "#0a66c2" },
-    { icon: RiGithubFill, url: "https://github.com/aishwaryaselvaraju", label: "GitHub", color: "#8b5cf6" },
-    { icon: RiMailFill, url: "mailto:aishwaryaselvaraju14@gmail.com", label: "Email", color: "#ec4899" },
+    { icon: RiGithubFill, url: "https://github.com/aishwaryaselvaraju", label: "GitHub", color: "#0a66c2" },
+    { icon: RiMailFill, url: "mailto:aishwaryaselvaraju14@gmail.com", label: "Email", color: "#0a66c2" },
    ],
 };
 
@@ -76,7 +88,7 @@ export const patentContribution = {
   applicationNumber: "202541053097",
   field: "Bio-medical Engineering",
   authority: "IP India (Govt. of India)",
-  inventors: ["Dr. R. Jayamala", "Mayilraj R", "Aishwarya K. S", "Jemuna U" ],
+  inventors: ["Dr. R. Jayamala", "Aishwarya K. S", "Mayilraj R", "Jemuna U" ],
 };
 
 
@@ -88,6 +100,7 @@ export const skillCategories = [
 
     {
     title: "Data Analysis",
+      icon: RiBarChartBoxLine,
     skills: [
       { name: "Python", level: 80 },
       { name: "Data Visualization", level: 85 },
@@ -101,6 +114,7 @@ export const skillCategories = [
 
   {
     title: "Design Tools",
+    icon: RiPaletteLine,
     skills: [
       { name: "Figma", level: 95 },
       { name: "Adobe Photoshop", level: 78 },
@@ -112,6 +126,7 @@ export const skillCategories = [
   },
   {
     title: "UI/UX Skills",
+    icon: RiSparklingLine,
     skills: [
       { name: "Wireframing & Prototyping", level: 92 },
       { name: "Mobile UI Design", level: 88 },
@@ -126,6 +141,7 @@ export const skillCategories = [
 
   {
     title: "Web & Tech",
+    icon: RiCodeBoxLine,
     skills: [
       { name: "Responsive Web Design", level: 80 },
       { name: "HTML5 / CSS3", level: 75 },
@@ -135,6 +151,7 @@ export const skillCategories = [
   },
   {
     title: "Soft Skills",
+    icon: RiBrainLine,
     skills: [
       { name: "Design Thinking", level: 90 },
       { name: "Collaboration", level: 88 },
@@ -166,7 +183,7 @@ export const internships = [
       "Developed **5+ responsive dashboards** using Power BI and Excel, enabling stakeholders to visualize key metrics and trends effectively.",
     ],
     tags: ["Excel", "PowerBI", "python", "Data Visualization", "SQL"],
-    color: "#0bf517",
+    color: "#0a66c2",
   },
 
    {
@@ -183,7 +200,7 @@ export const internships = [
       "Collaborated with cross-functional teams on **5+ digital marketing campaigns**, translating client requirements into compelling visual designs.",
     ],
     tags: ["Figma", "Canva", "UI Design", "Brand Design"],
-    color: "#6366f1",
+    color: "#0a66c2",
   },
   {
     role: "Web Developer Intern",
@@ -198,7 +215,7 @@ export const internships = [
       "Optimized website structure and usability, **improving page load speed** through clean code practices.",
     ],
     tags: ["Web Development", "Responsive Design", "HTML/CSS"],
-    color: "#f59e0b",
+    color: "#0a66c2",
   },
   {
     role: "Cyber Forensic Intern",
@@ -213,7 +230,7 @@ export const internships = [
       "Developed analytical thinking skills through structured digital investigation scenarios and incident response simulations.",
     ],
     tags: ["Security", "Digital Forensics", "Analysis"],
-    color: "#10b981",
+    color: "#0a66c2",
   },
   {
     role: "Data Science Intern",
@@ -228,7 +245,7 @@ export const internships = [
       "Adapted quickly to technical workflows, mastering data cleaning, visualization, and interpretation within a fast-paced learning environment.",
     ],
     tags: ["Data Analysis", "Python", "Visualization"],
-    color: "#8b5cf6",
+    color: "#0a66c2",
   },
 ];
 
@@ -597,48 +614,48 @@ export const certifications = [
   {
     title: "Generative AI in Action",
     issuer: "IBM SkillsBuild",
-    icon: "🤖",
-    color: "#6366f1",
+    icon: RiSparklingLine,
+    color: "#0a66c2",
     description: "Practical understanding of generative AI tools and their application in design workflows and creative problem-solving.",
     file: genAiCertificate,
   },
   {
     title: "Data Science Essentials",
     issuer: "Reliance Foundation Skilling Academy",
-    icon: "📊",
-    color: "#f59e0b",
+    icon: RiBarChartBoxLine,
+    color: "#0a66c2",
     description: "Foundational knowledge in data science methodologies, statistical analysis, and data-driven decision making for product design.",
     file: relianceFoundationCertificate,
   },
   {
     title: "Data Visualisation",
     issuer: "Kaggle Learn",
-    icon: "📈",
-    color: "#10b981",
+    icon: RiBarChartBoxLine,
+    color: "#0a66c2",
     description: "Skills in visualizing complex datasets, creating meaningful dashboards, and communicating design insights through data.",
     file: dataVisualizationCertificate,
   },
   {
     title: "Google UX Design Foundations",
     issuer: "IBM SkillsBuild ",
-    icon: "🎨",
-    color: "#ec4899",
+    icon: RiPaletteLine,
+    color: "#0a66c2",
     description: "Foundations in user-centred design, empathy mapping, wireframing, and usability testing.",
     file: uxDesignCertificate,
   },
   {
     title: "Python for Data Analysis",
     issuer: "Infosys Springboard",
-    icon: "🐍",
-    color: "#8b5cf6",
+    icon: RiCodeBoxLine,
+    color: "#0a66c2",
     description: "Applied Python skills for data cleaning, exploratory analysis, and communicating findings.",
     file: pythonCertificate,
   },
   {
     title: "Data Analysis",
     issuer: "Novi Tech Research & Development",
-    icon: "📊",
-    color: "#14b8a6",
+    icon: RiBrainLine,
+    color: "#0a66c2",
     description: "Principles for selecting effective charts and building clear, decision-ready visual stories.",
     file: dataAnalysisCertificate,
   },
@@ -655,7 +672,7 @@ export const education = [
     location: "Tiruchirappalli",
     period: "Nov 2022 – May 2026",
     score: "CGPA: 8.2 / 10",
-    icon: "🎓",
+    icon: RiGraduationCapLine,
     highlights: [
       "Active participation in design and tech events and hackathons",
       "Strong academic performance with consistent 8.2 CGPA",
@@ -668,7 +685,7 @@ export const education = [
     location: "Pudukkottai",
     period: "Jul 2020 – May 2022",
     score: "Grade: 90.50%",
-    icon: "📘",
+    icon: RiBookOpenLine,
     highlights: [
       "Completed higher secondary education with Biology and Mathematics",
       "Actively participated in health awareness and sports activities",
@@ -681,7 +698,7 @@ export const education = [
     location: "Pudukkottai",
     period: "Jul 2019 – May 2020",
     score: "Grade:92.20%",
-    icon: "🏫",
+    icon: RiBuilding2Line,
     highlights: [
       "Completed secondary education at Karpaga Vinayaga Matriculation Higher Secondary School",
     ],
@@ -697,32 +714,32 @@ export const achievements = [
   {
     title: "6+ Design Projects Delivered",
     description: "Designed and prototyped multiple end-to-end UI/UX projects including mobile apps, dashboards, and brand identity systems with real-world application focus.",
-    icon: "🎯",
-    color: "#6366f1",
+    icon: RiPaletteLine,
+    color: "#0a66c2",
   },
   {
     title: "5 Internships Across Domains",
     description: "Completed internships in software engineering, web development, cyber forensics, and data science — demonstrating rapid learning and cross-domain versatility.",
-    icon: "💼",
-    color: "#f59e0b",
+    icon: RiBriefcase3Line,
+    color: "#0a66c2",
   },
   {
     title: "Strong Academic Foundation",
     description: "Maintained 8.2 CGPA in B.Tech Information Technology at Anna University while balancing internships, projects, and design portfolio development.",
-    icon: "📚",
-    color: "#ec4899",
+    icon: RiBookOpenLine,
+    color: "#0a66c2",
   },
   {
     title: "Cross-Functional Collaborator",
     description: "Worked with engineering, marketing, and client teams across multiple internships — translating stakeholder requirements into impactful visual solutions.",
-    icon: "🤝",
-    color: "#10b981",
+    icon: RiUserStarLine,
+    color: "#0a66c2",
   },
   {
     title: "Published Patent Co-Inventor",
     description: "Co-inventor of IriSafe, a real-time biometric safety wearable patent published by IP India (Application No. 202541053097), contributing to iris authentication, AI threat intelligence, and blockchain-secured evidence storage.",
-    icon: "🏆",
-    color: "#fbbf24",
+    icon: RiAwardLine,
+    color: "#0a66c2",
   },
 ];
 
@@ -740,3 +757,4 @@ export const navLinks = [
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
+
