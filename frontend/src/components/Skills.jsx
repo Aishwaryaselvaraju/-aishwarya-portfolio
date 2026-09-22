@@ -65,7 +65,7 @@ export default function Skills() {
           <p className="section-subtitle">Technologies and abilities I bring to every project</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {skillCategories.map((cat) => (
             <div key={cat.title} className="card p-6 sm:p-7 stagger-item">
               <div className="flex items-center gap-3 mb-5">
