@@ -63,12 +63,12 @@ export const personalInfo = {
   bio: [
   "I’m a **UI/UX Designer and Data Analyst** who combines creative design with data-driven thinking. I create intuitive experiences in **Figma** and turn complex data into clear, actionable insights.",
 
-  "A B.Tech IT graduate from Anna University with a CGPA of **8.2**, I’m passionate about solving real-world problems through design, data, and technology."
+  "A B.Tech IT graduate from Anna University with a CGPA of **8.36**, I’m passionate about solving real-world problems through design, data, and technology."
 ],
   stats: [
     { value: "12+", label: "Design Projects" },
     { value: "5+", label: "Design Tools" },
-    { value: "8.2", label: "CGPA" },
+    { value: "8.36", label: "CGPA" },
     { value: "8+", label: "Data Projects" },
   ],
   socialLinks: [
@@ -671,11 +671,11 @@ export const education = [
     school: "University College of Engineering BIT Campus, Anna University",
     location: "Tiruchirappalli",
     period: "Nov 2022 – May 2026",
-    score: "CGPA: 8.2 / 10",
+    score: "CGPA: 8.36 / 10",
     icon: RiGraduationCapLine,
     highlights: [
       "Active participation in design and tech events and hackathons",
-      "Strong academic performance with consistent 8.2 CGPA",
+      "Strong academic performance with consistent 8.36 CGPA",
       "Combined technical engineering curriculum with design specialisation",
     ],
   },
@@ -725,7 +725,7 @@ export const achievements = [
   },
   {
     title: "Strong Academic Foundation",
-    description: "Maintained 8.2 CGPA in B.Tech Information Technology at Anna University while balancing internships, projects, and design portfolio development.",
+    description: "Maintained 8.36 CGPA in B.Tech Information Technology at Anna University while balancing internships, projects, and design portfolio development.",
     icon: RiBookOpenLine,
     color: "#0a66c2",
   },
