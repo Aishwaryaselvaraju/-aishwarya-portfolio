@@ -88,7 +88,7 @@ export const patentContribution = {
   applicationNumber: "202541053097",
   field: "Bio-medical Engineering",
   authority: "IP India (Govt. of India)",
-  inventors: ["Dr. R. Jayamala", "Aishwarya K. S", "Mayilraj R", "Jemuna U" ],
+  inventors: ["Dr. R. Jayamala", "Aishwarya K.S", "Mayilraj R", "Jemuna U" ],
 };
 
 
